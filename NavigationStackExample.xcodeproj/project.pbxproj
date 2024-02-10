@@ -17,6 +17,8 @@
 		79CC309D2B776726007CC035 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 79CC309C2B776726007CC035 /* ComposableArchitecture */; };
 		79CC30A22B776859007CC035 /* WelcomeScreenLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30A12B776859007CC035 /* WelcomeScreenLogic.swift */; };
 		79CC30A52B776986007CC035 /* YearOfBirthLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30A42B776986007CC035 /* YearOfBirthLogic.swift */; };
+		79CC30A92B7772FE007CC035 /* AgeHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30A82B7772FE007CC035 /* AgeHelperTests.swift */; };
+		79CC30AB2B777313007CC035 /* AgeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30AA2B777313007CC035 /* AgeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		79CC308E2B775C13007CC035 /* NavigationStackExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		79CC30A12B776859007CC035 /* WelcomeScreenLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenLogic.swift; sourceTree = "<group>"; };
 		79CC30A42B776986007CC035 /* YearOfBirthLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearOfBirthLogic.swift; sourceTree = "<group>"; };
+		79CC30A82B7772FE007CC035 /* AgeHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeHelperTests.swift; sourceTree = "<group>"; };
+		79CC30AA2B777313007CC035 /* AgeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 				79CC30762B775C13007CC035 /* NavigationStackExample.entitlements */,
 				79CC30772B775C13007CC035 /* Preview Content */,
 				79CC30A32B77685C007CC035 /* Business */,
+				79CC30AE2B7777AE007CC035 /* Data */,
 			);
 			path = NavigationStackExample;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				79CC30822B775C13007CC035 /* WelcomeScreenLogicTests.swift */,
+				79CC30A82B7772FE007CC035 /* AgeHelperTests.swift */,
 			);
 			path = NavigationStackExampleTests;
 			sourceTree = "<group>";
@@ -151,6 +157,14 @@
 				79CC30A42B776986007CC035 /* YearOfBirthLogic.swift */,
 			);
 			path = Business;
+			sourceTree = "<group>";
+		};
+		79CC30AE2B7777AE007CC035 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				79CC30AA2B777313007CC035 /* AgeHelper.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79CC30AB2B777313007CC035 /* AgeHelper.swift in Sources */,
 				79CC30732B775C10007CC035 /* ContentView.swift in Sources */,
 				79CC30A22B776859007CC035 /* WelcomeScreenLogic.swift in Sources */,
 				79CC30A52B776986007CC035 /* YearOfBirthLogic.swift in Sources */,
@@ -302,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79CC30A92B7772FE007CC035 /* AgeHelperTests.swift in Sources */,
 				79CC30832B775C13007CC035 /* WelcomeScreenLogicTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
