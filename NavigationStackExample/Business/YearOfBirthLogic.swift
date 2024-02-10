@@ -23,8 +23,9 @@ struct YearOfBirthLogic {
             switch action {
                 
             case .didTapNextButton:
-                // TODO: handling under 18 first need to handle above 18 logic
-                if !ageHelper.isUser18orAbove(dateOfBirth: state.dateOfBirth) {
+                if ageHelper.isUser18orAbove(dateOfBirth: state.dateOfBirth) {
+                    state.path.append(.namingFlow())
+                } else {
                     state.path.append(.onboardingCompleteScreen())
                 }
                 return .none
@@ -43,15 +44,20 @@ struct YearOfBirthLogic {
         @ObservableState
         enum State: Equatable, Sendable {
             case onboardingCompleteScreen(OnboardingCompleteLogic.State = .init())
+            case namingFlow(NamingFlowLogic.State = .firstNameScreen(FirstNameScreenLogic.State()))
         }
         
         enum Action: Equatable, Sendable {
             case onboardingCompleteScreen(OnboardingCompleteLogic.Action)
+            case namingFlow(NamingFlowLogic.Action)
         }
         
         var body: some Reducer<State, Action> {
             Scope(state: \.onboardingCompleteScreen, action: \.onboardingCompleteScreen) {
                 OnboardingCompleteLogic()
+            }
+            Scope(state: \.namingFlow, action: \.namingFlow) {
+                NamingFlowLogic()
             }
         }
     }

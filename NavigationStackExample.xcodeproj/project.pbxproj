@@ -21,6 +21,10 @@
 		79CC30A92B7772FE007CC035 /* AgeHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30A82B7772FE007CC035 /* AgeHelperTests.swift */; };
 		79CC30AB2B777313007CC035 /* AgeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30AA2B777313007CC035 /* AgeHelper.swift */; };
 		79CC30AD2B777736007CC035 /* OnboardingCompleteScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30AC2B777736007CC035 /* OnboardingCompleteScreen.swift */; };
+		79CC30B02B777ACA007CC035 /* FirstNameScreenLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30AF2B777ACA007CC035 /* FirstNameScreenLogicTests.swift */; };
+		79CC30B22B777B33007CC035 /* NamingFlowLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30B12B777B33007CC035 /* NamingFlowLogic.swift */; };
+		79CC30B42B777E98007CC035 /* FirstNameScreenLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30B32B777E98007CC035 /* FirstNameScreenLogic.swift */; };
+		79CC30B62B777F1E007CC035 /* FamilyNameScreenLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30B52B777F1E007CC035 /* FamilyNameScreenLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,10 @@
 		79CC30A82B7772FE007CC035 /* AgeHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeHelperTests.swift; sourceTree = "<group>"; };
 		79CC30AA2B777313007CC035 /* AgeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeHelper.swift; sourceTree = "<group>"; };
 		79CC30AC2B777736007CC035 /* OnboardingCompleteScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCompleteScreen.swift; sourceTree = "<group>"; };
+		79CC30AF2B777ACA007CC035 /* FirstNameScreenLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstNameScreenLogicTests.swift; sourceTree = "<group>"; };
+		79CC30B12B777B33007CC035 /* NamingFlowLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamingFlowLogic.swift; sourceTree = "<group>"; };
+		79CC30B32B777E98007CC035 /* FirstNameScreenLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstNameScreenLogic.swift; sourceTree = "<group>"; };
+		79CC30B52B777F1E007CC035 /* FamilyNameScreenLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyNameScreenLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +143,7 @@
 				79CC30822B775C13007CC035 /* WelcomeScreenLogicTests.swift */,
 				79CC30A62B7770AC007CC035 /* YearOfBirthLogicTests.swift */,
 				79CC30A82B7772FE007CC035 /* AgeHelperTests.swift */,
+				79CC30AF2B777ACA007CC035 /* FirstNameScreenLogicTests.swift */,
 			);
 			path = NavigationStackExampleTests;
 			sourceTree = "<group>";
@@ -161,6 +170,9 @@
 				79CC30A12B776859007CC035 /* WelcomeScreenLogic.swift */,
 				79CC30A42B776986007CC035 /* YearOfBirthLogic.swift */,
 				79CC30AC2B777736007CC035 /* OnboardingCompleteScreen.swift */,
+				79CC30B12B777B33007CC035 /* NamingFlowLogic.swift */,
+				79CC30B32B777E98007CC035 /* FirstNameScreenLogic.swift */,
+				79CC30B52B777F1E007CC035 /* FamilyNameScreenLogic.swift */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -312,11 +324,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				79CC30AB2B777313007CC035 /* AgeHelper.swift in Sources */,
+				79CC30B22B777B33007CC035 /* NamingFlowLogic.swift in Sources */,
 				79CC30732B775C10007CC035 /* ContentView.swift in Sources */,
 				79CC30A22B776859007CC035 /* WelcomeScreenLogic.swift in Sources */,
+				79CC30B42B777E98007CC035 /* FirstNameScreenLogic.swift in Sources */,
 				79CC30AD2B777736007CC035 /* OnboardingCompleteScreen.swift in Sources */,
 				79CC30A52B776986007CC035 /* YearOfBirthLogic.swift in Sources */,
 				79CC30712B775C10007CC035 /* NavigationStackExampleApp.swift in Sources */,
+				79CC30B62B777F1E007CC035 /* FamilyNameScreenLogic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79CC30B02B777ACA007CC035 /* FirstNameScreenLogicTests.swift in Sources */,
 				79CC30A92B7772FE007CC035 /* AgeHelperTests.swift in Sources */,
 				79CC30A72B7770AC007CC035 /* YearOfBirthLogicTests.swift in Sources */,
 				79CC30832B775C13007CC035 /* WelcomeScreenLogicTests.swift in Sources */,

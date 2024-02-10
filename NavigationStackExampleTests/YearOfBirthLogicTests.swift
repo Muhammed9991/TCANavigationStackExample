@@ -17,6 +17,19 @@ final class YearOfBirthLogicTests: XCTestCase {
             $0.path[id: 0] = .onboardingCompleteScreen()
         }
     }
+    
+    func testDidTapNextButton_where_userIsOver18() async {
+        let store = TestStore(initialState: YearOfBirthLogic.State(dateOfBirth: "1990-01-01 00:00:00 +0000")) {
+            YearOfBirthLogic()
+        } withDependencies: {
+            $0.ageHelper.isUser18orAbove = { _ in true }
+            $0.date.now = Date(timeIntervalSince1970: 1234567890)
+        }
+        
+        await store.send(.didTapNextButton) {
+            $0.path[id: 0] = .namingFlow()
+        }
+    }
 }
 
 
