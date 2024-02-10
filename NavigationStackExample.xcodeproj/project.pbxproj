@@ -11,10 +11,12 @@
 		79CC30732B775C10007CC035 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30722B775C10007CC035 /* ContentView.swift */; };
 		79CC30752B775C13007CC035 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79CC30742B775C13007CC035 /* Assets.xcassets */; };
 		79CC30792B775C13007CC035 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79CC30782B775C13007CC035 /* Preview Assets.xcassets */; };
-		79CC30832B775C13007CC035 /* NavigationStackExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30822B775C13007CC035 /* NavigationStackExampleTests.swift */; };
+		79CC30832B775C13007CC035 /* WelcomeScreenLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30822B775C13007CC035 /* WelcomeScreenLogicTests.swift */; };
 		79CC308D2B775C13007CC035 /* NavigationStackExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC308C2B775C13007CC035 /* NavigationStackExampleUITests.swift */; };
 		79CC308F2B775C13007CC035 /* NavigationStackExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC308E2B775C13007CC035 /* NavigationStackExampleUITestsLaunchTests.swift */; };
 		79CC309D2B776726007CC035 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 79CC309C2B776726007CC035 /* ComposableArchitecture */; };
+		79CC30A22B776859007CC035 /* WelcomeScreenLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30A12B776859007CC035 /* WelcomeScreenLogic.swift */; };
+		79CC30A52B776986007CC035 /* YearOfBirthLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30A42B776986007CC035 /* YearOfBirthLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,10 +44,12 @@
 		79CC30762B775C13007CC035 /* NavigationStackExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NavigationStackExample.entitlements; sourceTree = "<group>"; };
 		79CC30782B775C13007CC035 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		79CC307E2B775C13007CC035 /* NavigationStackExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavigationStackExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		79CC30822B775C13007CC035 /* NavigationStackExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackExampleTests.swift; sourceTree = "<group>"; };
+		79CC30822B775C13007CC035 /* WelcomeScreenLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenLogicTests.swift; sourceTree = "<group>"; };
 		79CC30882B775C13007CC035 /* NavigationStackExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavigationStackExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79CC308C2B775C13007CC035 /* NavigationStackExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackExampleUITests.swift; sourceTree = "<group>"; };
 		79CC308E2B775C13007CC035 /* NavigationStackExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		79CC30A12B776859007CC035 /* WelcomeScreenLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenLogic.swift; sourceTree = "<group>"; };
+		79CC30A42B776986007CC035 /* YearOfBirthLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearOfBirthLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 				79CC30812B775C13007CC035 /* NavigationStackExampleTests */,
 				79CC308B2B775C13007CC035 /* NavigationStackExampleUITests */,
 				79CC306E2B775C10007CC035 /* Products */,
+				79CC309E2B7767DA007CC035 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +107,7 @@
 				79CC30742B775C13007CC035 /* Assets.xcassets */,
 				79CC30762B775C13007CC035 /* NavigationStackExample.entitlements */,
 				79CC30772B775C13007CC035 /* Preview Content */,
+				79CC30A32B77685C007CC035 /* Business */,
 			);
 			path = NavigationStackExample;
 			sourceTree = "<group>";
@@ -117,7 +123,7 @@
 		79CC30812B775C13007CC035 /* NavigationStackExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				79CC30822B775C13007CC035 /* NavigationStackExampleTests.swift */,
+				79CC30822B775C13007CC035 /* WelcomeScreenLogicTests.swift */,
 			);
 			path = NavigationStackExampleTests;
 			sourceTree = "<group>";
@@ -129,6 +135,22 @@
 				79CC308E2B775C13007CC035 /* NavigationStackExampleUITestsLaunchTests.swift */,
 			);
 			path = NavigationStackExampleUITests;
+			sourceTree = "<group>";
+		};
+		79CC309E2B7767DA007CC035 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		79CC30A32B77685C007CC035 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				79CC30A12B776859007CC035 /* WelcomeScreenLogic.swift */,
+				79CC30A42B776986007CC035 /* YearOfBirthLogic.swift */,
+			);
+			path = Business;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +190,8 @@
 				79CC30802B775C13007CC035 /* PBXTargetDependency */,
 			);
 			name = NavigationStackExampleTests;
+			packageProductDependencies = (
+			);
 			productName = NavigationStackExampleTests;
 			productReference = 79CC307E2B775C13007CC035 /* NavigationStackExampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -268,6 +292,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				79CC30732B775C10007CC035 /* ContentView.swift in Sources */,
+				79CC30A22B776859007CC035 /* WelcomeScreenLogic.swift in Sources */,
+				79CC30A52B776986007CC035 /* YearOfBirthLogic.swift in Sources */,
 				79CC30712B775C10007CC035 /* NavigationStackExampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,7 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79CC30832B775C13007CC035 /* NavigationStackExampleTests.swift in Sources */,
+				79CC30832B775C13007CC035 /* WelcomeScreenLogicTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +457,7 @@
 				DEVELOPMENT_TEAM = HRYT9ZBRF7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -470,6 +497,7 @@
 				DEVELOPMENT_TEAM = HRYT9ZBRF7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -501,7 +529,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NavigationStackExample.app/NavigationStackExample";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HRYT9ZBRF7;
@@ -512,10 +540,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mahmoodies.NavigationStackExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NavigationStackExample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NavigationStackExample";
 			};
 			name = Debug;
@@ -524,7 +553,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NavigationStackExample.app/NavigationStackExample";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HRYT9ZBRF7;
@@ -535,10 +564,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mahmoodies.NavigationStackExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NavigationStackExample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NavigationStackExample";
 			};
 			name = Release;
@@ -557,10 +587,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mahmoodies.NavigationStackExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = NavigationStackExample;
 			};
 			name = Debug;
@@ -579,10 +610,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mahmoodies.NavigationStackExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = NavigationStackExample;
 			};
 			name = Release;
