@@ -7,6 +7,13 @@ struct OnboardingCompleteScreen: View {
         WithPerceptionTracking {
             ZStack {
                 Text("WOOOOHOOOO! Onboarding complete")
+                
+                NextButton(buttonMode: .constant(.enabled)) {
+                    self.store.send(.didTapNextButton)
+                }
+            }
+            .onAppear {
+                self.store.send(.onAppear)
             }
             .navigationTitle("Onboarding complete")
             .navigationBarBackButtonHidden()

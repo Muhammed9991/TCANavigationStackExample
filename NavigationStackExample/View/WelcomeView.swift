@@ -24,6 +24,11 @@ struct WelcomeView: View {
                     if let store = store.scope(state: \.onboardingCompleteScreen, action: \.onboardingCompleteScreen) {
                         OnboardingCompleteScreen(store: store)
                     }
+                    
+                case .homeScreen:
+                    if let store = store.scope(state: \.homeScreen, action: \.homeScreen) {
+                        HomeScreenView(store: store)
+                    }
                 case .namingFlow:
                     if let store = store.scope(state: \.namingFlow, action: \.namingFlow) {
                         

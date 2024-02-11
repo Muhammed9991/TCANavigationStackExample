@@ -1,3 +1,4 @@
+import Foundation
 import ComposableArchitecture
 
 @Reducer
@@ -5,6 +6,7 @@ struct WelcomeScreenLogic {
     @ObservableState
     struct State: Equatable, Sendable {
         var path = StackState<Path.State>()
+        var dateOfBirth: Date?
     }
     enum Action: Equatable, Sendable {
         case didTapNextButton
@@ -26,8 +28,13 @@ struct WelcomeScreenLogic {
                     state.path.append(.namingFlow())
                     return .none
                     
-                case .element(id: _, action: .yearOfBirthScreen(.navigateToOnBoardingCompleteScreen)):
-                    state.path.append(.onboardingCompleteScreen())
+                case let.element(id: _, action: .yearOfBirthScreen(.didTapNextButton(dateOfBirth: dateOfBirth))):
+                    state.dateOfBirth = dateOfBirth
+                    return .none
+                    
+                case let .element(id: _, action: .yearOfBirthScreen(.navigateToOnBoardingCompleteScreen(dateOfBirth: dateOfBirth))):
+                    state.dateOfBirth = dateOfBirth
+                    state.path.append(.onboardingCompleteScreen(.init(dateOfBirth: dateOfBirth)))
                     return .none
                     
                 case .element(id: _, action: .namingFlow(.onAppear)):
@@ -60,9 +67,14 @@ struct WelcomeScreenLogic {
                     )
                     return .none
                     
-                case .element(id: _, action: .namingFlow(.delegate(.finalNavigation))):
-                    state.path.append(.onboardingCompleteScreen(OnboardingCompleteLogic.State()))
+                case let .element(id: _, action: .namingFlow(.delegate(.finalNavigation(fullName: fullName)))):
+                    state.path.append(.onboardingCompleteScreen(OnboardingCompleteLogic.State(fullName: fullName, dateOfBirth: state.dateOfBirth)))
                     return .none
+                    
+                case .element(id: _, action: .onboardingCompleteScreen(.navigateToHomeScreen)):
+                    state.path.append(.homeScreen(HomeScreenLogic.State()))
+                    return .none
+                    
                     
                 default:
                     return .none
@@ -81,6 +93,7 @@ struct WelcomeScreenLogic {
             case yearOfBirthScreen(YearOfBirthLogic.State = .init())
             case onboardingCompleteScreen(OnboardingCompleteLogic.State = .init())
             case namingFlow(NamingFlowLogic.State = .init())
+            case homeScreen(HomeScreenLogic.State = .init())
             
         }
         
@@ -88,6 +101,7 @@ struct WelcomeScreenLogic {
             case yearOfBirthScreen(YearOfBirthLogic.Action)
             case onboardingCompleteScreen(OnboardingCompleteLogic.Action)
             case namingFlow(NamingFlowLogic.Action)
+            case homeScreen(HomeScreenLogic.Action)
         }
         
         var body: some Reducer<State, Action> {
@@ -99,6 +113,9 @@ struct WelcomeScreenLogic {
             }
             Scope(state: \.namingFlow, action: \.namingFlow) {
                 NamingFlowLogic()
+            }
+            Scope(state: \.homeScreen, action: \.homeScreen) {
+                HomeScreenLogic()
             }
         }
     }

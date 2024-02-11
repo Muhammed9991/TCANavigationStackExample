@@ -11,7 +11,7 @@ struct YearOfBirthScreen: View {
                 }
                 
                 NextButton(buttonMode: .constant(.enabled)) {
-                    self.store.send(.didTapNextButton)
+                    self.store.send(.didTapNextButton(dateOfBirth: self.store.dateOfBirth))
                 }
             }
             .padding()

@@ -14,7 +14,7 @@ struct NamingFlowLogic {
         enum Delegate: Equatable, Sendable {
             case navigateToFamilyNameScreen(firstName: String)
             case navigateToNameCompleteScreen(fullName: String)
-            case finalNavigation
+            case finalNavigation(fullName: String)
         }
     }
     
@@ -30,8 +30,8 @@ struct NamingFlowLogic {
             case let .namingFlowStack(.familyNameScreen(.delegate(.navigateToNameCompleteScreen(fullName: fullName)))):
                 return .send(.delegate(.navigateToNameCompleteScreen(fullName: fullName)))
                 
-            case .namingFlowStack(.nameCompleteScreen(.delegate(.navigate))):
-                return .send(.delegate(.finalNavigation))
+            case let .namingFlowStack(.nameCompleteScreen(.delegate(.navigate(fullName: fullName)))):
+                return .send(.delegate(.finalNavigation(fullName: fullName)))
             
             case .namingFlowStack, .delegate:
                 return .none

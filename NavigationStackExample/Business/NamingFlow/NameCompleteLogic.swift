@@ -11,7 +11,7 @@ struct NameCompleteLogic {
         case didTapNextButton
         case delegate(Delegate)
         enum Delegate: Equatable, Sendable {
-            case navigate
+            case navigate(fullName: String)
         }
     }
     
@@ -19,7 +19,7 @@ struct NameCompleteLogic {
         Reduce { state, action in
             switch action  {
             case .didTapNextButton:
-                return .send(.delegate(.navigate))
+                return .send(.delegate(.navigate(fullName: state.fullName)))
                 
             case .delegate(.navigate):
                 return .none

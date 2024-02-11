@@ -10,9 +10,9 @@ struct YearOfBirthLogic {
     
     enum Action: Equatable, Sendable, BindableAction {
         case binding(BindingAction<State>)
-        case didTapNextButton
+        case didTapNextButton(dateOfBirth: Date)
         case navigateToNamingFlow
-        case navigateToOnBoardingCompleteScreen
+        case navigateToOnBoardingCompleteScreen(dateOfBirth: Date)
     }
     
     @Dependency(\.ageHelper) var ageHelper
@@ -22,11 +22,11 @@ struct YearOfBirthLogic {
         Reduce<State, Action> { state, action in
             switch action {
                 
-            case .didTapNextButton:
+            case let .didTapNextButton(dateOfBirth: dateOfBirth):
                 if ageHelper.isUser18orAbove(dateOfBirth: state.dateOfBirth.description ) {
                     return .send(.navigateToNamingFlow)
                 } else {
-                    return .send(.navigateToOnBoardingCompleteScreen)
+                    return .send(.navigateToOnBoardingCompleteScreen(dateOfBirth: dateOfBirth))
                 }
                 
             case .navigateToNamingFlow:
