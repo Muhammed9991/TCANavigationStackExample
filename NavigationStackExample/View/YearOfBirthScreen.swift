@@ -7,7 +7,7 @@ struct YearOfBirthScreen: View {
         WithPerceptionTracking {
             ZStack {
                 DatePicker(selection: self.$store.dateOfBirth, in: ...Date.now, displayedComponents: .date) {
-                    Text("Choose your date of birth")
+                    Text("Select your date of birth")
                 }
                 
                 NextButton(buttonMode: .constant(.enabled)) {

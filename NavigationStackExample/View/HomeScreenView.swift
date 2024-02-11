@@ -18,6 +18,7 @@ struct HomeScreenView: View {
                     Text("Full name: \(fullName)")
                 }
             }
+            .onAppear { self.store.send(.onAppear) }
             .navigationBarBackButtonHidden()
             .navigationTitle("Welcome screen")
         }

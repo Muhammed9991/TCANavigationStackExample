@@ -8,12 +8,11 @@ struct WelcomeView: View {
             NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
                 ZStack {
                     Text("Welcome ")
-                    
-                    
                     NextButton(buttonMode: .constant(.enabled)) {
                         self.store.send(.didTapNextButton)
                     }
                 }
+                .onAppear { self.store.send(.onAppear) }
             } destination: { store in
                 switch store.state {
                 case .yearOfBirthScreen:

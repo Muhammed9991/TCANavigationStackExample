@@ -10,14 +10,26 @@ struct WelcomeScreenLogic {
     }
     enum Action: Equatable, Sendable {
         case didTapNextButton
+        case onAppear
         case path(StackAction<Path.State, Path.Action>)
     }
     
     @Dependency(\.ageHelper) var ageHelper
+    @Dependency(\.onBoardingCache) var onBoardingCache
     
     var body: some Reducer<State, Action> {
         Reduce<State, Action> { state, action in
             switch action {
+            case .onAppear:
+                let onBoardingCache = onBoardingCache.value()
+                let isUserLoggedIn = onBoardingCache != nil
+                
+                if isUserLoggedIn {
+                    state.path.append(.homeScreen(HomeScreenLogic.State()))
+                }
+                
+                return .none
+            
             case .didTapNextButton:
                 state.path.append(.yearOfBirthScreen())
                 return .none
