@@ -6,30 +6,35 @@ import ComposableArchitecture
 final class YearOfBirthLogicTests: XCTestCase {
     
     func testDidTapNextButton_where_userIsUnder18() async {
-        let store = TestStore(initialState: YearOfBirthLogic.State(dateOfBirth: "2010-01-01 00:00:00 +0000")) {
+        let store = TestStore(initialState: YearOfBirthLogic.State()) {
             YearOfBirthLogic()
         } withDependencies: {
             $0.ageHelper.isUser18orAbove = { _ in false }
-            $0.date.now = Date(timeIntervalSince1970: 1234567890)
+            $0.date.now = DateFormatter.date(fromString: "2010-01-01 00:00:00 +0000")!
         }
         
-        await store.send(.didTapNextButton) {
-            $0.path[id: 0] = .onboardingCompleteScreen()
-        }
+        await store.send(.didTapNextButton)
+        await store.receive(.navigateToOnBoardingCompleteScreen)
     }
     
     func testDidTapNextButton_where_userIsOver18() async {
-        let store = TestStore(initialState: YearOfBirthLogic.State(dateOfBirth: "1990-01-01 00:00:00 +0000")) {
+        let store = TestStore(initialState: YearOfBirthLogic.State()) {
             YearOfBirthLogic()
         } withDependencies: {
             $0.ageHelper.isUser18orAbove = { _ in true }
-            $0.date.now = Date(timeIntervalSince1970: 1234567890)
+            $0.date.now = DateFormatter.date(fromString: "1990-01-01 00:00:00 +0000")!
         }
         
-        await store.send(.didTapNextButton) {
-            $0.path[id: 0] = .namingFlow()
-        }
+        await store.send(.didTapNextButton)
+        await store.receive(.navigateToNamingFlow)
     }
 }
 
 
+private extension DateFormatter {
+    static func date(fromString dateString: String, format: String = "yyyy-MM-dd HH:mm:ss Z") -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.date(from: dateString)
+    }
+}

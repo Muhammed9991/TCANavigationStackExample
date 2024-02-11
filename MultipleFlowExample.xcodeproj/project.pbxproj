@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		79CC30712B775C10007CC035 /* NavigationStackExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30702B775C10007CC035 /* NavigationStackExampleApp.swift */; };
-		79CC30732B775C10007CC035 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30722B775C10007CC035 /* ContentView.swift */; };
+		79CC30712B775C10007CC035 /* MultipleFlowExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30702B775C10007CC035 /* MultipleFlowExample.swift */; };
 		79CC30752B775C13007CC035 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79CC30742B775C13007CC035 /* Assets.xcassets */; };
 		79CC30792B775C13007CC035 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79CC30782B775C13007CC035 /* Preview Assets.xcassets */; };
 		79CC30832B775C13007CC035 /* WelcomeScreenLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30822B775C13007CC035 /* WelcomeScreenLogicTests.swift */; };
@@ -20,11 +19,14 @@
 		79CC30A72B7770AC007CC035 /* YearOfBirthLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30A62B7770AC007CC035 /* YearOfBirthLogicTests.swift */; };
 		79CC30A92B7772FE007CC035 /* AgeHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30A82B7772FE007CC035 /* AgeHelperTests.swift */; };
 		79CC30AB2B777313007CC035 /* AgeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30AA2B777313007CC035 /* AgeHelper.swift */; };
-		79CC30AD2B777736007CC035 /* OnboardingCompleteScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30AC2B777736007CC035 /* OnboardingCompleteScreen.swift */; };
+		79CC30AD2B777736007CC035 /* OnboardingCompleteLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30AC2B777736007CC035 /* OnboardingCompleteLogic.swift */; };
 		79CC30B02B777ACA007CC035 /* FirstNameScreenLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30AF2B777ACA007CC035 /* FirstNameScreenLogicTests.swift */; };
 		79CC30B22B777B33007CC035 /* NamingFlowLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30B12B777B33007CC035 /* NamingFlowLogic.swift */; };
 		79CC30B42B777E98007CC035 /* FirstNameScreenLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30B32B777E98007CC035 /* FirstNameScreenLogic.swift */; };
 		79CC30B62B777F1E007CC035 /* FamilyNameScreenLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30B52B777F1E007CC035 /* FamilyNameScreenLogic.swift */; };
+		79CC30B82B7780C3007CC035 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30B72B7780C3007CC035 /* WelcomeView.swift */; };
+		79CC30BB2B79222D007CC035 /* YearOfBirthScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30BA2B79222D007CC035 /* YearOfBirthScreen.swift */; };
+		79CC30BD2B7925B5007CC035 /* OnboardingCompleteScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30BC2B7925B5007CC035 /* OnboardingCompleteScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +48,7 @@
 
 /* Begin PBXFileReference section */
 		79CC306D2B775C10007CC035 /* NavigationStackExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationStackExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		79CC30702B775C10007CC035 /* NavigationStackExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackExampleApp.swift; sourceTree = "<group>"; };
-		79CC30722B775C10007CC035 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		79CC30702B775C10007CC035 /* MultipleFlowExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleFlowExample.swift; sourceTree = "<group>"; };
 		79CC30742B775C13007CC035 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79CC30762B775C13007CC035 /* NavigationStackExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NavigationStackExample.entitlements; sourceTree = "<group>"; };
 		79CC30782B775C13007CC035 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -61,11 +62,14 @@
 		79CC30A62B7770AC007CC035 /* YearOfBirthLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearOfBirthLogicTests.swift; sourceTree = "<group>"; };
 		79CC30A82B7772FE007CC035 /* AgeHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeHelperTests.swift; sourceTree = "<group>"; };
 		79CC30AA2B777313007CC035 /* AgeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeHelper.swift; sourceTree = "<group>"; };
-		79CC30AC2B777736007CC035 /* OnboardingCompleteScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCompleteScreen.swift; sourceTree = "<group>"; };
+		79CC30AC2B777736007CC035 /* OnboardingCompleteLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCompleteLogic.swift; sourceTree = "<group>"; };
 		79CC30AF2B777ACA007CC035 /* FirstNameScreenLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstNameScreenLogicTests.swift; sourceTree = "<group>"; };
 		79CC30B12B777B33007CC035 /* NamingFlowLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamingFlowLogic.swift; sourceTree = "<group>"; };
 		79CC30B32B777E98007CC035 /* FirstNameScreenLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstNameScreenLogic.swift; sourceTree = "<group>"; };
 		79CC30B52B777F1E007CC035 /* FamilyNameScreenLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyNameScreenLogic.swift; sourceTree = "<group>"; };
+		79CC30B72B7780C3007CC035 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		79CC30BA2B79222D007CC035 /* YearOfBirthScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearOfBirthScreen.swift; sourceTree = "<group>"; };
+		79CC30BC2B7925B5007CC035 /* OnboardingCompleteScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCompleteScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,11 +122,11 @@
 		79CC306F2B775C10007CC035 /* NavigationStackExample */ = {
 			isa = PBXGroup;
 			children = (
-				79CC30702B775C10007CC035 /* NavigationStackExampleApp.swift */,
-				79CC30722B775C10007CC035 /* ContentView.swift */,
+				79CC30702B775C10007CC035 /* MultipleFlowExample.swift */,
 				79CC30742B775C13007CC035 /* Assets.xcassets */,
 				79CC30762B775C13007CC035 /* NavigationStackExample.entitlements */,
 				79CC30772B775C13007CC035 /* Preview Content */,
+				79CC30B92B7780C7007CC035 /* View */,
 				79CC30A32B77685C007CC035 /* Business */,
 				79CC30AE2B7777AE007CC035 /* Data */,
 			);
@@ -169,7 +173,7 @@
 			children = (
 				79CC30A12B776859007CC035 /* WelcomeScreenLogic.swift */,
 				79CC30A42B776986007CC035 /* YearOfBirthLogic.swift */,
-				79CC30AC2B777736007CC035 /* OnboardingCompleteScreen.swift */,
+				79CC30AC2B777736007CC035 /* OnboardingCompleteLogic.swift */,
 				79CC30B12B777B33007CC035 /* NamingFlowLogic.swift */,
 				79CC30B32B777E98007CC035 /* FirstNameScreenLogic.swift */,
 				79CC30B52B777F1E007CC035 /* FamilyNameScreenLogic.swift */,
@@ -183,6 +187,16 @@
 				79CC30AA2B777313007CC035 /* AgeHelper.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		79CC30B92B7780C7007CC035 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				79CC30B72B7780C3007CC035 /* WelcomeView.swift */,
+				79CC30BA2B79222D007CC035 /* YearOfBirthScreen.swift */,
+				79CC30BC2B7925B5007CC035 /* OnboardingCompleteScreen.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,7 +283,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 79CC30682B775C10007CC035 /* Build configuration list for PBXProject "NavigationStackExample" */;
+			buildConfigurationList = 79CC30682B775C10007CC035 /* Build configuration list for PBXProject "MultipleFlowExample" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -325,12 +339,14 @@
 			files = (
 				79CC30AB2B777313007CC035 /* AgeHelper.swift in Sources */,
 				79CC30B22B777B33007CC035 /* NamingFlowLogic.swift in Sources */,
-				79CC30732B775C10007CC035 /* ContentView.swift in Sources */,
+				79CC30BB2B79222D007CC035 /* YearOfBirthScreen.swift in Sources */,
 				79CC30A22B776859007CC035 /* WelcomeScreenLogic.swift in Sources */,
 				79CC30B42B777E98007CC035 /* FirstNameScreenLogic.swift in Sources */,
-				79CC30AD2B777736007CC035 /* OnboardingCompleteScreen.swift in Sources */,
+				79CC30B82B7780C3007CC035 /* WelcomeView.swift in Sources */,
+				79CC30BD2B7925B5007CC035 /* OnboardingCompleteScreen.swift in Sources */,
+				79CC30AD2B777736007CC035 /* OnboardingCompleteLogic.swift in Sources */,
 				79CC30A52B776986007CC035 /* YearOfBirthLogic.swift in Sources */,
-				79CC30712B775C10007CC035 /* NavigationStackExampleApp.swift in Sources */,
+				79CC30712B775C10007CC035 /* MultipleFlowExample.swift in Sources */,
 				79CC30B62B777F1E007CC035 /* FamilyNameScreenLogic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +439,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -478,6 +495,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -508,7 +526,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -548,7 +566,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -662,7 +680,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		79CC30682B775C10007CC035 /* Build configuration list for PBXProject "NavigationStackExample" */ = {
+		79CC30682B775C10007CC035 /* Build configuration list for PBXProject "MultipleFlowExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				79CC30902B775C13007CC035 /* Debug */,

@@ -5,14 +5,14 @@ import ComposableArchitecture
 struct YearOfBirthLogic {
     @ObservableState
     struct State: Equatable, Sendable {
-        var path = StackState<Path.State>()
-        var dateOfBirth: String = ""
+        var dateOfBirth: Date = .now
     }
     
     enum Action: Equatable, Sendable, BindableAction {
         case binding(BindingAction<State>)
         case didTapNextButton
-        case path(StackAction<Path.State, Path.Action>)
+        case navigateToNamingFlow
+        case navigateToOnBoardingCompleteScreen
     }
     
     @Dependency(\.ageHelper) var ageHelper
@@ -23,43 +23,21 @@ struct YearOfBirthLogic {
             switch action {
                 
             case .didTapNextButton:
-                if ageHelper.isUser18orAbove(dateOfBirth: state.dateOfBirth) {
-                    state.path.append(.namingFlow())
+                if ageHelper.isUser18orAbove(dateOfBirth: state.dateOfBirth.description ) {
+                    return .send(.navigateToNamingFlow)
                 } else {
-                    state.path.append(.onboardingCompleteScreen())
+                    return .send(.navigateToOnBoardingCompleteScreen)
                 }
+                
+            case .navigateToNamingFlow:
                 return .none
                 
-            case .path, .binding:
+            case .navigateToOnBoardingCompleteScreen:
+                return .none
+                
+            case .binding:
                 return .none
             }
         }
-        .forEach(\.path, action: \.path) {
-            Path()
-        }
     }
-    
-    @Reducer
-    struct Path {
-        @ObservableState
-        enum State: Equatable, Sendable {
-            case onboardingCompleteScreen(OnboardingCompleteLogic.State = .init())
-            case namingFlow(NamingFlowLogic.State = .firstNameScreen(FirstNameScreenLogic.State()))
-        }
-        
-        enum Action: Equatable, Sendable {
-            case onboardingCompleteScreen(OnboardingCompleteLogic.Action)
-            case namingFlow(NamingFlowLogic.Action)
-        }
-        
-        var body: some Reducer<State, Action> {
-            Scope(state: \.onboardingCompleteScreen, action: \.onboardingCompleteScreen) {
-                OnboardingCompleteLogic()
-            }
-            Scope(state: \.namingFlow, action: \.namingFlow) {
-                NamingFlowLogic()
-            }
-        }
-    }
-
 }
