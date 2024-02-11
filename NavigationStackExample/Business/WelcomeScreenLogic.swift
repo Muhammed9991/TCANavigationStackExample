@@ -40,21 +40,21 @@ struct WelcomeScreenLogic {
                     )
                     return .none
                     
-                case .element(id: _, action: .namingFlow(.delegate(.navigateToFamilyNameScreen))):
+                case let .element(id: _, action: .namingFlow(.delegate(.navigateToFamilyNameScreen(firstName: firstName)))):
                     state.path.append(
                         .namingFlow(
                             .init(
-                                namingFlowStack: .familyNameScreen(FamilyNameScreenLogic.State())
+                                namingFlowStack: .familyNameScreen(FamilyNameScreenLogic.State(firstName: firstName))
                             )
                         )
                     )
                     return .none
                     
-                case .element(id: _, action: .namingFlow(.delegate(.navigateToNameCompleteScreen))):
+                case let .element(id: _, action: .namingFlow(.delegate(.navigateToNameCompleteScreen(fullName: fullName)))):
                     state.path.append(
                         .namingFlow(
                             .init(
-                                namingFlowStack: .nameCompleteScreen(NameCompleteLogic.State())
+                                namingFlowStack: .nameCompleteScreen(NameCompleteLogic.State(fullName: fullName))
                             )
                         )
                     )

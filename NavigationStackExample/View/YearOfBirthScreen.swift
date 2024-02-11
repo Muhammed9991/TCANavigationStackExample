@@ -10,7 +10,7 @@ struct YearOfBirthScreen: View {
                     Text("Choose your date of birth")
                 }
                 
-                NextButton {
+                NextButton(buttonMode: .constant(.enabled)) {
                     self.store.send(.didTapNextButton)
                 }
             }

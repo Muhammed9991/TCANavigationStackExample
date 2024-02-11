@@ -10,7 +10,7 @@ struct WelcomeView: View {
                     Text("Welcome ")
                     
                     
-                    NextButton {
+                    NextButton(buttonMode: .constant(.enabled)) {
                         self.store.send(.didTapNextButton)
                     }
                 }
@@ -57,27 +57,4 @@ struct WelcomeView: View {
     WelcomeView(store: Store(initialState: WelcomeScreenLogic.State(), reducer: {
         WelcomeScreenLogic()
     }))
-}
-
-struct NextButton: View {
-    let onButtonTapped: () -> Void
-    var body: some View {
-        VStack {
-            Spacer()
-            HStack {
-                Spacer()
-               
-                Button {
-                    onButtonTapped()
-                } label: {
-                    Text("Next")
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(10) // Adjust the corner radius as needed
-                }
-            }
-        }
-        .padding(.trailing)
-    }
 }

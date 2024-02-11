@@ -7,20 +7,24 @@ struct NameCompleteScreen: View {
         WithPerceptionTracking {
             ZStack {
                 
-                Text("Your full name is")
+                VStack {
+                    Text("Your full name is")
+                    Text(self.store.fullName)
+                }
                 
-                NextButton {
+                NextButton(buttonMode: .constant(.enabled)) {
                     self.store.send(.didTapNextButton)
                 }
             }
             .padding()
+            .navigationBarBackButtonHidden()
             .navigationTitle("Name complete screen")
         }
     }
 }
 
 #Preview {
-    NameCompleteScreen(store: Store(initialState: NameCompleteLogic.State(), reducer: {
+    NameCompleteScreen(store: Store(initialState: NameCompleteLogic.State(fullName: "John Doe"), reducer: {
         NameCompleteLogic()
     }))
 }
