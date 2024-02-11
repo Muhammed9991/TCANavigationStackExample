@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7910BE2F2B79387B00B09DFE /* NamingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7910BE2E2B79387B00B09DFE /* NamingFlow.swift */; };
+		7910BE312B793C5100B09DFE /* NameCompleteLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7910BE302B793C5100B09DFE /* NameCompleteLogic.swift */; };
+		7910BE342B793E0E00B09DFE /* NamingFlowLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7910BE332B793E0E00B09DFE /* NamingFlowLogicTests.swift */; };
+		7910BE362B79449400B09DFE /* FirstNameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7910BE352B79449400B09DFE /* FirstNameScreen.swift */; };
+		7910BE382B79490400B09DFE /* NameCompleteScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7910BE372B79490400B09DFE /* NameCompleteScreen.swift */; };
+		7910BE3A2B79491A00B09DFE /* FamilyNameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7910BE392B79491A00B09DFE /* FamilyNameScreen.swift */; };
 		79CC30712B775C10007CC035 /* MultipleFlowExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30702B775C10007CC035 /* MultipleFlowExample.swift */; };
 		79CC30752B775C13007CC035 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79CC30742B775C13007CC035 /* Assets.xcassets */; };
 		79CC30792B775C13007CC035 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79CC30782B775C13007CC035 /* Preview Assets.xcassets */; };
@@ -21,7 +27,7 @@
 		79CC30AB2B777313007CC035 /* AgeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30AA2B777313007CC035 /* AgeHelper.swift */; };
 		79CC30AD2B777736007CC035 /* OnboardingCompleteLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30AC2B777736007CC035 /* OnboardingCompleteLogic.swift */; };
 		79CC30B02B777ACA007CC035 /* FirstNameScreenLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30AF2B777ACA007CC035 /* FirstNameScreenLogicTests.swift */; };
-		79CC30B22B777B33007CC035 /* NamingFlowLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30B12B777B33007CC035 /* NamingFlowLogic.swift */; };
+		79CC30B22B777B33007CC035 /* NamingFlowStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30B12B777B33007CC035 /* NamingFlowStack.swift */; };
 		79CC30B42B777E98007CC035 /* FirstNameScreenLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30B32B777E98007CC035 /* FirstNameScreenLogic.swift */; };
 		79CC30B62B777F1E007CC035 /* FamilyNameScreenLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30B52B777F1E007CC035 /* FamilyNameScreenLogic.swift */; };
 		79CC30B82B7780C3007CC035 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30B72B7780C3007CC035 /* WelcomeView.swift */; };
@@ -47,6 +53,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7910BE2E2B79387B00B09DFE /* NamingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamingFlow.swift; sourceTree = "<group>"; };
+		7910BE302B793C5100B09DFE /* NameCompleteLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCompleteLogic.swift; sourceTree = "<group>"; };
+		7910BE332B793E0E00B09DFE /* NamingFlowLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamingFlowLogicTests.swift; sourceTree = "<group>"; };
+		7910BE352B79449400B09DFE /* FirstNameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstNameScreen.swift; sourceTree = "<group>"; };
+		7910BE372B79490400B09DFE /* NameCompleteScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCompleteScreen.swift; sourceTree = "<group>"; };
+		7910BE392B79491A00B09DFE /* FamilyNameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyNameScreen.swift; sourceTree = "<group>"; };
 		79CC306D2B775C10007CC035 /* NavigationStackExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationStackExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79CC30702B775C10007CC035 /* MultipleFlowExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleFlowExample.swift; sourceTree = "<group>"; };
 		79CC30742B775C13007CC035 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,7 +76,7 @@
 		79CC30AA2B777313007CC035 /* AgeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeHelper.swift; sourceTree = "<group>"; };
 		79CC30AC2B777736007CC035 /* OnboardingCompleteLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCompleteLogic.swift; sourceTree = "<group>"; };
 		79CC30AF2B777ACA007CC035 /* FirstNameScreenLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstNameScreenLogicTests.swift; sourceTree = "<group>"; };
-		79CC30B12B777B33007CC035 /* NamingFlowLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamingFlowLogic.swift; sourceTree = "<group>"; };
+		79CC30B12B777B33007CC035 /* NamingFlowStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamingFlowStack.swift; sourceTree = "<group>"; };
 		79CC30B32B777E98007CC035 /* FirstNameScreenLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstNameScreenLogic.swift; sourceTree = "<group>"; };
 		79CC30B52B777F1E007CC035 /* FamilyNameScreenLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyNameScreenLogic.swift; sourceTree = "<group>"; };
 		79CC30B72B7780C3007CC035 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -98,6 +110,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7910BE322B793C6700B09DFE /* NamingFlow */ = {
+			isa = PBXGroup;
+			children = (
+				79CC30B12B777B33007CC035 /* NamingFlowStack.swift */,
+				79CC30B32B777E98007CC035 /* FirstNameScreenLogic.swift */,
+				79CC30B52B777F1E007CC035 /* FamilyNameScreenLogic.swift */,
+				7910BE302B793C5100B09DFE /* NameCompleteLogic.swift */,
+			);
+			path = NamingFlow;
+			sourceTree = "<group>";
+		};
+		7910BE3B2B79496900B09DFE /* NamingFlow */ = {
+			isa = PBXGroup;
+			children = (
+				7910BE2E2B79387B00B09DFE /* NamingFlow.swift */,
+				7910BE352B79449400B09DFE /* FirstNameScreen.swift */,
+				7910BE372B79490400B09DFE /* NameCompleteScreen.swift */,
+				7910BE392B79491A00B09DFE /* FamilyNameScreen.swift */,
+			);
+			path = NamingFlow;
+			sourceTree = "<group>";
+		};
 		79CC30642B775C10007CC035 = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +182,7 @@
 				79CC30A62B7770AC007CC035 /* YearOfBirthLogicTests.swift */,
 				79CC30A82B7772FE007CC035 /* AgeHelperTests.swift */,
 				79CC30AF2B777ACA007CC035 /* FirstNameScreenLogicTests.swift */,
+				7910BE332B793E0E00B09DFE /* NamingFlowLogicTests.swift */,
 			);
 			path = NavigationStackExampleTests;
 			sourceTree = "<group>";
@@ -174,9 +209,7 @@
 				79CC30A12B776859007CC035 /* WelcomeScreenLogic.swift */,
 				79CC30A42B776986007CC035 /* YearOfBirthLogic.swift */,
 				79CC30AC2B777736007CC035 /* OnboardingCompleteLogic.swift */,
-				79CC30B12B777B33007CC035 /* NamingFlowLogic.swift */,
-				79CC30B32B777E98007CC035 /* FirstNameScreenLogic.swift */,
-				79CC30B52B777F1E007CC035 /* FamilyNameScreenLogic.swift */,
+				7910BE322B793C6700B09DFE /* NamingFlow */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -195,6 +228,7 @@
 				79CC30B72B7780C3007CC035 /* WelcomeView.swift */,
 				79CC30BA2B79222D007CC035 /* YearOfBirthScreen.swift */,
 				79CC30BC2B7925B5007CC035 /* OnboardingCompleteScreen.swift */,
+				7910BE3B2B79496900B09DFE /* NamingFlow */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -338,14 +372,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				79CC30AB2B777313007CC035 /* AgeHelper.swift in Sources */,
-				79CC30B22B777B33007CC035 /* NamingFlowLogic.swift in Sources */,
+				79CC30B22B777B33007CC035 /* NamingFlowStack.swift in Sources */,
 				79CC30BB2B79222D007CC035 /* YearOfBirthScreen.swift in Sources */,
 				79CC30A22B776859007CC035 /* WelcomeScreenLogic.swift in Sources */,
+				7910BE3A2B79491A00B09DFE /* FamilyNameScreen.swift in Sources */,
+				7910BE382B79490400B09DFE /* NameCompleteScreen.swift in Sources */,
 				79CC30B42B777E98007CC035 /* FirstNameScreenLogic.swift in Sources */,
+				7910BE312B793C5100B09DFE /* NameCompleteLogic.swift in Sources */,
 				79CC30B82B7780C3007CC035 /* WelcomeView.swift in Sources */,
 				79CC30BD2B7925B5007CC035 /* OnboardingCompleteScreen.swift in Sources */,
 				79CC30AD2B777736007CC035 /* OnboardingCompleteLogic.swift in Sources */,
+				7910BE362B79449400B09DFE /* FirstNameScreen.swift in Sources */,
 				79CC30A52B776986007CC035 /* YearOfBirthLogic.swift in Sources */,
+				7910BE2F2B79387B00B09DFE /* NamingFlow.swift in Sources */,
 				79CC30712B775C10007CC035 /* MultipleFlowExample.swift in Sources */,
 				79CC30B62B777F1E007CC035 /* FamilyNameScreenLogic.swift in Sources */,
 			);
@@ -355,6 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7910BE342B793E0E00B09DFE /* NamingFlowLogicTests.swift in Sources */,
 				79CC30B02B777ACA007CC035 /* FirstNameScreenLogicTests.swift in Sources */,
 				79CC30A92B7772FE007CC035 /* AgeHelperTests.swift in Sources */,
 				79CC30A72B7770AC007CC035 /* YearOfBirthLogicTests.swift in Sources */,

@@ -9,6 +9,7 @@ struct OnboardingCompleteScreen: View {
                 Text("WOOOOHOOOO! Onboarding complete")
             }
             .navigationTitle("Onboarding complete")
+            .navigationBarBackButtonHidden()
         }
     }
 }

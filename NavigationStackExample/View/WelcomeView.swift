@@ -27,6 +27,25 @@ struct WelcomeView: View {
                 case .namingFlow:
                     if let store = store.scope(state: \.namingFlow, action: \.namingFlow) {
                         
+                        WithPerceptionTracking {
+                            if let childStore = store.scope(state: \.namingFlowStack, action: \.namingFlowStack) {
+                                switch childStore.state {
+                                case .firstNameScreen:
+                                    if let store = childStore.scope(state: \.firstNameScreen, action: \.firstNameScreen) {
+                                        FirstNameScreen(store: store)
+                                    }
+                                case .familyNameScreen:
+                                    if let store = childStore.scope(state: \.familyNameScreen, action: \.familyNameScreen) {
+                                        FamilyNameScreen(store: store)
+                                    }
+                                    
+                                case .nameCompleteScreen:
+                                    if let store = childStore.scope(state: \.nameCompleteScreen, action: \.nameCompleteScreen) {
+                                        NameCompleteScreen(store: store)
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }

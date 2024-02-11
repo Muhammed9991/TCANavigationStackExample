@@ -30,6 +30,40 @@ struct WelcomeScreenLogic {
                     state.path.append(.onboardingCompleteScreen())
                     return .none
                     
+                case .element(id: _, action: .namingFlow(.onAppear)):
+                    state.path.append(
+                        .namingFlow(
+                            .init(
+                                namingFlowStack: .firstNameScreen(FirstNameScreenLogic.State())
+                                 )
+                        )
+                    )
+                    return .none
+                    
+                case .element(id: _, action: .namingFlow(.delegate(.navigateToFamilyNameScreen))):
+                    state.path.append(
+                        .namingFlow(
+                            .init(
+                                namingFlowStack: .familyNameScreen(FamilyNameScreenLogic.State())
+                            )
+                        )
+                    )
+                    return .none
+                    
+                case .element(id: _, action: .namingFlow(.delegate(.navigateToNameCompleteScreen))):
+                    state.path.append(
+                        .namingFlow(
+                            .init(
+                                namingFlowStack: .nameCompleteScreen(NameCompleteLogic.State())
+                            )
+                        )
+                    )
+                    return .none
+                    
+                case .element(id: _, action: .namingFlow(.delegate(.finalNavigation))):
+                    state.path.append(.onboardingCompleteScreen(OnboardingCompleteLogic.State()))
+                    return .none
+                    
                 default:
                     return .none
                 }
@@ -46,7 +80,7 @@ struct WelcomeScreenLogic {
         enum State: Equatable, Sendable {
             case yearOfBirthScreen(YearOfBirthLogic.State = .init())
             case onboardingCompleteScreen(OnboardingCompleteLogic.State = .init())
-            case namingFlow(NamingFlowLogic.State = .firstNameScreen(FirstNameScreenLogic.State()))
+            case namingFlow(NamingFlowLogic.State = .init())
             
         }
         

@@ -10,11 +10,8 @@ class FirstNameScreenLogicTests: XCTestCase {
             FirstNameScreenLogic()
         }
         
-        await store.send(.didTapNextButton) {
-            $0.path[id: 0] = .familyNameScreen()
-        }
-            
-        
+        await store.send(.didTapNextButton) 
+        await store.receive(.delegate(.navigateToFamilyNameScreen))
     }
     
 }
