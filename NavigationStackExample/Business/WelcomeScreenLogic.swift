@@ -21,7 +21,7 @@ struct WelcomeScreenLogic {
         Reduce<State, Action> { state, action in
             switch action {
             case .onAppear:
-                if isDataAvailable(.onBoarding) {
+                if isDataAvailable(.dobModel) || isDataAvailable(.namingModel) {
                     state.path.append(.homeScreen(HomeScreenLogic.State()))
                 }
                 
@@ -70,18 +70,18 @@ struct WelcomeScreenLogic {
                     )
                     return .none
                     
-                case let .element(id: _, action: .namingFlow(.delegate(.navigateToNameCompleteScreen(fullName: fullName)))):
+                case let .element(id: _, action: .namingFlow(.delegate(.navigateToNameCompleteScreen(firstName: firstName, familyName: familyName)))):
                     state.path.append(
                         .namingFlow(
                             .init(
-                                namingFlowStack: .nameCompleteScreen(NameCompleteLogic.State(fullName: fullName))
+                                namingFlowStack: .nameCompleteScreen(NameCompleteLogic.State(firstName: firstName, familyName: familyName))
                             )
                         )
                     )
                     return .none
                     
-                case let .element(id: _, action: .namingFlow(.delegate(.finalNavigation(fullName: fullName)))):
-                    state.path.append(.onboardingCompleteScreen(OnboardingCompleteLogic.State(fullName: fullName, dateOfBirth: state.dateOfBirth)))
+                case let .element(id: _, action: .namingFlow(.delegate(.finalNavigation(firstName: firstName, familyName: familyName)))):
+                    state.path.append(.onboardingCompleteScreen(OnboardingCompleteLogic.State(firstName: firstName, familyName: familyName, dateOfBirth: state.dateOfBirth)))
                     return .none
                     
                 case .element(id: _, action: .onboardingCompleteScreen(.navigateToHomeScreen)):

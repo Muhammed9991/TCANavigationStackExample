@@ -2,10 +2,30 @@ import SwiftUI
 import ComposableArchitecture
 
 struct HomeScreenView: View {
-    let store: StoreOf<HomeScreenLogic>
+    @Perception.Bindable var store: StoreOf<HomeScreenLogic>
     var body: some View {
         WithPerceptionTracking {
             ZStack {
+                
+                if self.store.fullName != nil {
+                    VStack {
+                        HStack {
+                            Spacer()
+                            Button {
+                                self.store.send(.didTapUpdateNameButton)
+                            } label: {
+                                Text("Update Name")
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .background(Color.blue)
+                                    .cornerRadius(10)
+                            }
+                        }
+                        Spacer()
+                    }
+                    .padding(.trailing)
+                }
+                
                 VStack(alignment: .leading) {
                     
                     Text("Summary:")
@@ -32,6 +52,15 @@ struct HomeScreenView: View {
             }
             .navigationBarBackButtonHidden()
             .navigationTitle("Welcome screen")
+            .sheet(
+                item: self.$store.scope(state: \.namingFlow, action: \.namingFlow),
+                onDismiss: {  self.store.send(.onAppear) }
+            ) { store in
+                
+                NamingFlowView(store: store)
+                
+            }
+            
         }
     }
 }

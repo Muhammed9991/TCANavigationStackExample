@@ -6,15 +6,12 @@ struct FamilyNameScreenLogic {
     @ObservableState
     struct State: Equatable, Sendable {
         var firstName: String
-        var lastName: String = ""
+        var familyName: String = ""
         var buttonMode: ButtonMode = .disabled
-        var fullName: String {
-            return "\(firstName) \(lastName)"
-        }
         
         var focusedField: Field?
         enum Field: String, Hashable {
-          case lastName
+          case familyName
         }
     }
     enum Action: Equatable, Sendable, BindableAction {
@@ -23,7 +20,7 @@ struct FamilyNameScreenLogic {
         case onAppear
         case delegate(Delegate)
         enum Delegate: Equatable, Sendable {
-            case navigateToNameCompleteScreen(fullName: String)
+            case navigateToNameCompleteScreen(firstName: String, familyName: String)
         }
     }
     
@@ -32,17 +29,17 @@ struct FamilyNameScreenLogic {
         Reduce<State, Action> { state, action in
             switch action  {
                 
-            case .binding(\.lastName):
-                state.buttonMode = state.lastName.isWhitespaceOrEmpty ? .disabled : .enabled
+            case .binding(\.familyName):
+                state.buttonMode = state.familyName.isWhitespaceOrEmpty ? .disabled : .enabled
                 return .none
                 
             case .onAppear:
-                state.focusedField = .lastName
+                state.focusedField = .familyName
                 return .none
                 
             case .didTapNextButton:
-                return .run { [fullName = state.fullName] send in
-                    await send(.delegate(.navigateToNameCompleteScreen(fullName: fullName)))
+                return .run { [firstName = state.firstName, familyName = state.familyName] send in
+                    await send(.delegate(.navigateToNameCompleteScreen(firstName: firstName, familyName: familyName)))
                 }
                 
             case .delegate(.navigateToNameCompleteScreen):

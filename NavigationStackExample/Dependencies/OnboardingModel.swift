@@ -2,16 +2,33 @@ import Foundation
 import Dependencies
 import DependenciesMacros
 
-final class OnboardingModel: Codable {
-    let fullName: String?
-    let dateOfBirth: Date?
+
+final class DateOfBirthModel: Codable, Sendable, Equatable {
+    static func == (lhs: DateOfBirthModel, rhs: DateOfBirthModel) -> Bool {
+        lhs.dateOfBirth == rhs.dateOfBirth
+    }
     
-    init(fullName: String?, dateOfBirth: Date?) {
-        self.fullName = fullName
+    let dateOfBirth: Date?
+    init(dateOfBirth: Date?) {
         self.dateOfBirth = dateOfBirth
     }
 }
 
+final class NamingModel: Codable, Sendable, Equatable {
+    static func == (lhs: NamingModel, rhs: NamingModel) -> Bool {
+        lhs.firstName == rhs.firstName && lhs.familyName == rhs.familyName
+    }
+    
+    let firstName: String?
+    let familyName: String?
+    
+    init(firstName: String?, familyName: String?) {
+        self.firstName = firstName
+        self.familyName = familyName
+    }
+}
+
 extension URL {
-  static let onBoarding = Self.documentsDirectory.appending(component: "on-boarding.json")
+  static let namingModel = Self.documentsDirectory.appending(component: "naming-model.json")
+  static let dobModel = Self.documentsDirectory.appending(component: "dob-model.json")
 }

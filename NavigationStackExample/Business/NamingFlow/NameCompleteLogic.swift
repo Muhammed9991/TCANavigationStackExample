@@ -5,13 +5,17 @@ import ComposableArchitecture
 struct NameCompleteLogic {
     @ObservableState
     struct State: Equatable, Sendable {
-        var fullName: String
+        var firstName: String
+        var familyName: String
+        var fullName: String {
+            return "\(firstName) \(familyName)"
+        }
     }
     enum Action: Equatable, Sendable {
         case didTapNextButton
         case delegate(Delegate)
         enum Delegate: Equatable, Sendable {
-            case navigate(fullName: String)
+            case navigate(firstName: String, familyName: String)
         }
     }
     
@@ -19,7 +23,7 @@ struct NameCompleteLogic {
         Reduce { state, action in
             switch action  {
             case .didTapNextButton:
-                return .send(.delegate(.navigate(fullName: state.fullName)))
+                return .send(.delegate(.navigate(firstName: state.firstName, familyName: state.familyName)))
                 
             case .delegate(.navigate):
                 return .none
