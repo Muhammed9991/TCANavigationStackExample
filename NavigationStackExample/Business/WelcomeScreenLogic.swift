@@ -15,16 +15,13 @@ struct WelcomeScreenLogic {
     }
     
     @Dependency(\.ageHelper) var ageHelper
-    @Dependency(\.onBoardingCache) var onBoardingCache
+    @Dependency(\.dataManager.isDataAvailable) var isDataAvailable
     
     var body: some Reducer<State, Action> {
         Reduce<State, Action> { state, action in
             switch action {
             case .onAppear:
-                let onBoardingCache = onBoardingCache.value()
-                let isUserLoggedIn = onBoardingCache != nil
-                
-                if isUserLoggedIn {
+                if isDataAvailable(.onBoarding) {
                     state.path.append(.homeScreen(HomeScreenLogic.State()))
                 }
                 
@@ -36,6 +33,10 @@ struct WelcomeScreenLogic {
                 
             case let .path(action):
                 switch action {
+                case .element(id: _, action: .homeScreen(.delegate(.logOut))):
+                    state.path.removeAll()
+                    return .none
+                    
                 case .element(id: _, action: .yearOfBirthScreen(.navigateToNamingFlow)):
                     state.path.append(.namingFlow())
                     return .none

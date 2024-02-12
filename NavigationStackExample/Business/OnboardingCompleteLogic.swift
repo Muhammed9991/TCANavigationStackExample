@@ -15,20 +15,18 @@ struct OnboardingCompleteLogic {
         case onAppear
     }
     
-    @Dependency(\.onBoardingCache) var onBoardingCache
+    @Dependency(\.dataManager.save) var saveData
     
     var body: some Reducer<State, Action> {
         Reduce<State, Action> { state, action in
             switch action {
             case .onAppear:
-                // Save to cache
-                if let dateOfBirth = state.dateOfBirth {
-                    let fullName = state.fullName
-                    let userData = OnboardingCacheModel(fullName: fullName, dateOfBirth: dateOfBirth)
-                    onBoardingCache.insert(value: userData)
+                return .run { [dateOfBirth = state.dateOfBirth,  fullName = state.fullName] send in
+                    if let dateOfBirth {
+                        let userData = OnboardingModel(fullName: fullName, dateOfBirth: dateOfBirth)
+                        try await saveData(JSONEncoder().encode(userData), .onBoarding)
+                    }
                 }
-
-                return .none
             
             case .didTapNextButton:
                 return .send(.navigateToHomeScreen)

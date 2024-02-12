@@ -5,20 +5,31 @@ struct HomeScreenView: View {
     let store: StoreOf<HomeScreenLogic>
     var body: some View {
         WithPerceptionTracking {
-            VStack(alignment: .leading) {
-                
-                Text("Summary:")
-                    .font(.title)
-                    .fontWeight(.bold)
-                if let dateOfBirth = self.store.dateOfBirth {
-                    Text("Date of birth: \(dateOfBirth.formatted(date: .long, time: .omitted))")
+            ZStack {
+                VStack(alignment: .leading) {
+                    
+                    Text("Summary:")
+                        .font(.title)
+                        .fontWeight(.bold)
+                    if let dateOfBirth = self.store.dateOfBirth {
+                        Text("Date of birth: \(dateOfBirth.formatted(date: .long, time: .omitted))")
+                    }
+                    
+                    if let fullName = self.store.fullName {
+                        Text("Full name: \(fullName)")
+                    }
+
                 }
                 
-                if let fullName = self.store.fullName {
-                    Text("Full name: \(fullName)")
+                VStack {
+                    Spacer()
+                    Button {
+                        self.store.send(.didTapLogOutButton)
+                    } label: {
+                        Text("Log out")
+                    }
                 }
             }
-            .onAppear { self.store.send(.onAppear) }
             .navigationBarBackButtonHidden()
             .navigationTitle("Welcome screen")
         }
