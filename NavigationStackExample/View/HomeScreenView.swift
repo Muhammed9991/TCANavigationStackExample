@@ -60,6 +60,7 @@ struct HomeScreenView: View {
                 NamingFlowView(store: store)
                 
             }
+            .onAppear { self.store.send(.onAppear) }
             
         }
     }

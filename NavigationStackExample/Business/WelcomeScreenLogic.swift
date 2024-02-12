@@ -50,39 +50,46 @@ struct WelcomeScreenLogic {
                     state.path.append(.onboardingCompleteScreen(.init(dateOfBirth: dateOfBirth)))
                     return .none
                     
-                case .element(id: _, action: .namingFlow(.onAppear)):
-                    state.path.append(
-                        .namingFlow(
-                            .init(
-                                namingFlowStack: .firstNameScreen(FirstNameScreenLogic.State())
-                                 )
-                        )
-                    )
-                    return .none
-                    
-                case let .element(id: _, action: .namingFlow(.delegate(.navigateToFamilyNameScreen(firstName: firstName)))):
-                    state.path.append(
-                        .namingFlow(
-                            .init(
-                                namingFlowStack: .familyNameScreen(FamilyNameScreenLogic.State(firstName: firstName))
+                case let .element(id: _, action: .namingFlow(namingFlowaAtion)):
+                    switch namingFlowaAtion {
+                    case .onAppear:
+                        state.path.append(
+                            .namingFlow(
+                                .init(
+                                    namingFlowStack: .firstNameScreen(FirstNameScreenLogic.State())
+                                     )
                             )
                         )
-                    )
-                    return .none
-                    
-                case let .element(id: _, action: .namingFlow(.delegate(.navigateToNameCompleteScreen(firstName: firstName, familyName: familyName)))):
-                    state.path.append(
-                        .namingFlow(
-                            .init(
-                                namingFlowStack: .nameCompleteScreen(NameCompleteLogic.State(firstName: firstName, familyName: familyName))
+                        return .none
+                        
+                    case let .delegate(.navigateToFamilyNameScreen(firstName: firstName)):
+                        state.path.append(
+                            .namingFlow(
+                                .init(
+                                    namingFlowStack: .familyNameScreen(FamilyNameScreenLogic.State(firstName: firstName))
+                                )
                             )
                         )
-                    )
-                    return .none
+                        return .none
                     
-                case let .element(id: _, action: .namingFlow(.delegate(.finalNavigation(firstName: firstName, familyName: familyName)))):
-                    state.path.append(.onboardingCompleteScreen(OnboardingCompleteLogic.State(firstName: firstName, familyName: familyName, dateOfBirth: state.dateOfBirth)))
-                    return .none
+                    case let .delegate(.navigateToNameCompleteScreen(firstName: firstName, familyName: familyName)):
+                        
+                        state.path.append(
+                            .namingFlow(
+                                .init(
+                                    namingFlowStack: .nameCompleteScreen(NameCompleteLogic.State(firstName: firstName, familyName: familyName))
+                                )
+                            )
+                        )
+                        
+                        return .none
+                        
+                    case let .delegate(.finalNavigation(firstName: firstName, familyName: familyName)):
+                        state.path.append(.onboardingCompleteScreen(OnboardingCompleteLogic.State(firstName: firstName, familyName: familyName, dateOfBirth: state.dateOfBirth)))
+                        return .none
+                    default:
+                        return .none
+                    }
                     
                 case .element(id: _, action: .onboardingCompleteScreen(.navigateToHomeScreen)):
                     state.path.append(.homeScreen(HomeScreenLogic.State()))

@@ -57,7 +57,8 @@ struct HomeScreenLogic {
                 }
                 
             case .didTapUpdateNameButton:
-                state.namingFlow = FirstNameScreenLogic.State()
+                // This is a way to use the sheet version not reusable
+                // state.namingFlow = FirstNameScreenLogic.State()
                 return .none
                 
             case .delegate(.logOut):
