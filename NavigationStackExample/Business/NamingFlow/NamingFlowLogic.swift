@@ -19,7 +19,6 @@ struct NamingFlowLogic {
             case finalNavigation(firstName: String, familyName: String)
         }
         
-//        case navigateToFamilyNameScreen(OnboardingModel)
     }
     
     @Dependency(\.dataManager) var dataManager

@@ -52,15 +52,6 @@ struct HomeScreenView: View {
             }
             .navigationBarBackButtonHidden()
             .navigationTitle("Welcome screen")
-            .sheet(
-                item: self.$store.scope(state: \.namingFlow, action: \.namingFlow),
-                onDismiss: {  self.store.send(.onAppear) }
-            ) { store in
-                
-                NamingFlowView(store: store)
-                
-            }
-            .onAppear { self.store.send(.onAppear) }
             
         }
     }

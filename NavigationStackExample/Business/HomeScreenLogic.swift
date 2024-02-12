@@ -7,15 +7,36 @@ struct HomeScreenLogic {
     struct State: Equatable, Sendable {
         var fullName: String?
         var dateOfBirth: Date?
-        @Presents var namingFlow: FirstNameScreenLogic.State?
+        
+        init(
+            fullName: String? = nil,
+            dateOfBirth: Date? = nil
+        ) {
+            self.fullName = fullName
+            self.dateOfBirth = dateOfBirth
+            
+            do {
+                @Dependency(\.dataManager.load) var loadData
+                let namingModel = try JSONDecoder().decode(NamingModel.self, from: loadData(.namingModel))
+                
+                if let firstName = namingModel.firstName, let familyName = namingModel.familyName {
+                    let fullName = "\(firstName) \(familyName)"
+                    self.fullName = fullName
+                }
+                
+                let dobModel = try JSONDecoder().decode(DateOfBirthModel.self, from: loadData(.dobModel))
+                self.dateOfBirth = dobModel.dateOfBirth
+            } catch {
+                // TODO: handle error. This technically not possible.
+            }
+            
+        }
     }
     
     @Dependency(\.dataManager.load) var loadData
     
     enum Action: Equatable, Sendable, BindableAction {
         case binding(BindingAction<State>)
-        case onAppear
-        case updateData(NamingModel, DateOfBirthModel)
         case didTapLogOutButton
         case didTapUpdateNameButton
         case namingFlow(PresentationAction<FirstNameScreenLogic.Action>)
@@ -33,22 +54,6 @@ struct HomeScreenLogic {
         Reduce<State, Action> { state, action in
             switch action {
                 
-            case .onAppear:
-                return .run { send in
-                    let namingModel = try JSONDecoder().decode(NamingModel.self, from: load(.namingModel))
-                    let dobModel = try JSONDecoder().decode(DateOfBirthModel.self, from: load(.dobModel))
-                    await send(.updateData(namingModel, dobModel))
-                } catch: { error, send in
-                    // TODO: Handle error
-                }
-                
-            case let .updateData(namingModel, dobModel):
-                if let firstName = namingModel.firstName, let familyName = namingModel.familyName {
-                    let fullName = "\(firstName) \(familyName)"
-                    state.fullName = fullName
-                }
-                state.dateOfBirth = dobModel.dateOfBirth
-                return .none
             case .didTapLogOutButton:
                 return .run { send in
                     try await delete(.namingModel)
@@ -57,8 +62,6 @@ struct HomeScreenLogic {
                 }
                 
             case .didTapUpdateNameButton:
-                // This is a way to use the sheet version not reusable
-                // state.namingFlow = FirstNameScreenLogic.State()
                 return .none
                 
             case .delegate(.logOut):
@@ -67,9 +70,6 @@ struct HomeScreenLogic {
             case .namingFlow, .binding:
                 return .none
             }
-        }
-        .ifLet(\.$namingFlow, action: \.namingFlow) {
-          FirstNameScreenLogic()
         }
 
     }
