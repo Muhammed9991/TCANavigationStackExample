@@ -184,7 +184,7 @@
 				79CC30772B775C13007CC035 /* Preview Content */,
 				79CC30B92B7780C7007CC035 /* View */,
 				79CC30A32B77685C007CC035 /* Business */,
-				79CC30AE2B7777AE007CC035 /* Data */,
+				79CC30AE2B7777AE007CC035 /* Dependencies */,
 				7910BE3E2B794DC900B09DFE /* Shared */,
 			);
 			path = NavigationStackExample;
@@ -238,13 +238,13 @@
 			path = Business;
 			sourceTree = "<group>";
 		};
-		79CC30AE2B7777AE007CC035 /* Data */ = {
+		79CC30AE2B7777AE007CC035 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
 				79CC30AA2B777313007CC035 /* AgeHelper.swift */,
 				7910BE482B796DA100B09DFE /* CacheHelper.swift */,
 			);
-			path = Data;
+			path = Dependencies;
 			sourceTree = "<group>";
 		};
 		79CC30B92B7780C7007CC035 /* View */ = {
