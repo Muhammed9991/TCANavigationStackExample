@@ -24,7 +24,7 @@ struct NameCompleteScreen: View {
 }
 
 #Preview {
-    NameCompleteScreen(store: Store(initialState: NameCompleteLogic.State(fullName: "John Doe"), reducer: {
+    NameCompleteScreen(store: Store(initialState: NameCompleteLogic.State(firstName: "John", familyName: "Doe"), reducer: {
         NameCompleteLogic()
     }))
 }

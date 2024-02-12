@@ -2,24 +2,57 @@ import SwiftUI
 import ComposableArchitecture
 
 struct HomeScreenView: View {
-    let store: StoreOf<HomeScreenLogic>
+    @Perception.Bindable var store: StoreOf<HomeScreenLogic>
     var body: some View {
         WithPerceptionTracking {
-            VStack(alignment: .leading) {
+            ZStack {
                 
-                Text("Summary:")
-                    .font(.title)
-                    .fontWeight(.bold)
-                if let dateOfBirth = self.store.dateOfBirth {
-                    Text("Date of birth: \(dateOfBirth.formatted(date: .long, time: .omitted))")
+                if self.store.fullName != nil {
+                    VStack {
+                        HStack {
+                            Spacer()
+                            Button {
+                                self.store.send(.didTapUpdateNameButton)
+                            } label: {
+                                Text("Update Name")
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .background(Color.blue)
+                                    .cornerRadius(10)
+                            }
+                        }
+                        Spacer()
+                    }
+                    .padding(.trailing)
                 }
                 
-                if let fullName = self.store.fullName {
-                    Text("Full name: \(fullName)")
+                VStack(alignment: .leading) {
+                    
+                    Text("Summary:")
+                        .font(.title)
+                        .fontWeight(.bold)
+                    if let dateOfBirth = self.store.dateOfBirth {
+                        Text("Date of birth: \(dateOfBirth.formatted(date: .long, time: .omitted))")
+                    }
+                    
+                    if let fullName = self.store.fullName {
+                        Text("Full name: \(fullName)")
+                    }
+
+                }
+                
+                VStack {
+                    Spacer()
+                    Button {
+                        self.store.send(.didTapLogOutButton)
+                    } label: {
+                        Text("Log out")
+                    }
                 }
             }
             .navigationBarBackButtonHidden()
             .navigationTitle("Welcome screen")
+            
         }
     }
 }

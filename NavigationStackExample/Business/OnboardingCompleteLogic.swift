@@ -5,7 +5,8 @@ import ComposableArchitecture
 struct OnboardingCompleteLogic {
     @ObservableState
     struct State: Equatable, Sendable {
-        var fullName: String?
+        var firstName: String?
+        var familyName: String?
         var dateOfBirth: Date?
     }
     
@@ -15,12 +16,24 @@ struct OnboardingCompleteLogic {
         case onAppear
     }
     
+    @Dependency(\.dataManager.save) var saveData
+    
     var body: some Reducer<State, Action> {
         Reduce<State, Action> { state, action in
             switch action {
             case .onAppear:
-                // Save to cache
-                return .none
+                return .run { [
+                    dateOfBirth = state.dateOfBirth,
+                    firstName = state.firstName,
+                    familyName = state.familyName
+                ] send in
+                    if let dateOfBirth {
+                        let namingModel = NamingModel(firstName: firstName, familyName: familyName)
+                        let dobModel = DateOfBirthModel(dateOfBirth: dateOfBirth)
+                        try await saveData(JSONEncoder().encode(namingModel), .namingModel)
+                        try await saveData(JSONEncoder().encode(dobModel), .dobModel)
+                    }
+                }
             
             case .didTapNextButton:
                 return .send(.navigateToHomeScreen)

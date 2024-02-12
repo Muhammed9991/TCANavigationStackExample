@@ -13,10 +13,13 @@ struct NamingFlowLogic {
         case delegate(Delegate)
         enum Delegate: Equatable, Sendable {
             case navigateToFamilyNameScreen(firstName: String)
-            case navigateToNameCompleteScreen(fullName: String)
-            case finalNavigation(fullName: String)
+            case navigateToNameCompleteScreen(firstName: String, familyName: String)
+            case finalNavigation(firstName: String, familyName: String)
         }
+        
     }
+    
+    @Dependency(\.dataManager) var dataManager
     
     var body: some Reducer<State, Action> {
         Reduce<State, Action> { state, action in
@@ -27,18 +30,21 @@ struct NamingFlowLogic {
             case let .namingFlowStack(.firstNameScreen(.delegate(.navigateToFamilyNameScreen(firstName: firstName)))):
                 return .send(.delegate(.navigateToFamilyNameScreen(firstName: firstName)))
                 
-            case let .namingFlowStack(.familyNameScreen(.delegate(.navigateToNameCompleteScreen(fullName: fullName)))):
-                return .send(.delegate(.navigateToNameCompleteScreen(fullName: fullName)))
+            case let .namingFlowStack(.familyNameScreen(.delegate(.navigateToNameCompleteScreen(firstName: firstName, familyName: familyName)))):
+                return .send(.delegate(.navigateToNameCompleteScreen(firstName: firstName, familyName: familyName)))
                 
-            case let .namingFlowStack(.nameCompleteScreen(.delegate(.navigate(fullName: fullName)))):
-                return .send(.delegate(.finalNavigation(fullName: fullName)))
-            
+            case let .namingFlowStack(.nameCompleteScreen(.delegate(.navigate(firstName: firstName, familyName: familyName)))):
+                return .send(.delegate(.finalNavigation(firstName: firstName, familyName: familyName)))
+                
             case .namingFlowStack, .delegate:
                 return .none
+                
             }
+            
         }
         .ifLet(\.namingFlowStack, action: \.namingFlowStack) {
             NamingFlowStack()
         }
+        
     }
 }

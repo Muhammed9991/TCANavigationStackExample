@@ -22,11 +22,14 @@ struct FirstNameScreenLogic {
         }
     }
     
+    @Dependency(\.dataManager) var dataManager
+    @Dependency(\.dismiss) var dismiss
+    
     var body: some Reducer<State, Action>  {
         BindingReducer()
-        Reduce { state, action in
+        Reduce<State, Action> { state, action in
             switch action  {
-            
+                
             case .binding(\.firstName):
                 state.buttonMode = state.firstName.isWhitespaceOrEmpty ? .disabled : .enabled
                 return .none
@@ -34,13 +37,13 @@ struct FirstNameScreenLogic {
             case .onAppear:
                 state.focusedField = .firstName
                 return .none
-            
+                
             case .didTapNextButton:
                 return .run { [firstName = state.firstName] send in
                     await send(.delegate(.navigateToFamilyNameScreen(firstName: firstName)))
                 }
                 
-            case .delegate(.navigateToFamilyNameScreen):
+            case  .delegate(.navigateToFamilyNameScreen):
                 return .none
                 
             case .binding:

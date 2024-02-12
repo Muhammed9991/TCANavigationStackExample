@@ -2,18 +2,17 @@ import SwiftUI
 import ComposableArchitecture
 
 struct WelcomeView: View {
-    @Perception.Bindable var store: StoreOf <WelcomeScreenLogic>
+    @Perception.Bindable var store: StoreOf<WelcomeScreenLogic>
     var body: some View {
         WithPerceptionTracking {
             NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
                 ZStack {
                     Text("Welcome ")
-                    
-                    
                     NextButton(buttonMode: .constant(.enabled)) {
                         self.store.send(.didTapNextButton)
                     }
                 }
+                .onAppear { self.store.send(.onAppear) }
             } destination: { store in
                 switch store.state {
                 case .yearOfBirthScreen:

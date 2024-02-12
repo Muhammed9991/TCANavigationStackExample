@@ -13,10 +13,10 @@ struct FamilyNameScreen: View {
                         .stroke(Color.blue, lineWidth: 1)
                         .frame(height: 40)
                         .overlay(
-                            TextField("Type your family name:", text: self.$store.lastName)
+                            TextField("Type your family name:", text: self.$store.familyName)
                                 .padding(.horizontal, 8)
                                 .foregroundColor(.black)
-                                .focused($focusedField, equals: .lastName)
+                                .focused($focusedField, equals: .familyName)
                         )
                     
                 }
