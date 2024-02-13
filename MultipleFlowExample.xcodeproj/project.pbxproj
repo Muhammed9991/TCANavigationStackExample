@@ -210,10 +210,10 @@
 				79CC30822B775C13007CC035 /* WelcomeScreenLogicTests.swift */,
 				79CC30A62B7770AC007CC035 /* YearOfBirthLogicTests.swift */,
 				7910BE4E2B7B72F900B09DFE /* OnboardingCompleteLogicTests.swift */,
+				7910BE502B7B742B00B09DFE /* HomeScreenLogicTests.swift */,
 				79CC30A82B7772FE007CC035 /* AgeHelperTests.swift */,
 				79CC30AF2B777ACA007CC035 /* FirstNameScreenLogicTests.swift */,
 				7910BE332B793E0E00B09DFE /* NamingFlowLogicTests.swift */,
-				7910BE502B7B742B00B09DFE /* HomeScreenLogicTests.swift */,
 			);
 			path = NavigationStackExampleTests;
 			sourceTree = "<group>";
