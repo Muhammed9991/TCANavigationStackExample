@@ -5,7 +5,7 @@ import ComposableArchitecture
 struct NavigationStackExampleApp: App {
     var body: some Scene {
         WindowGroup {
-            WelcomeView(store: Store(initialState: WelcomeScreenLogic.State(), reducer: {
+            WelcomeScreen(store: Store(initialState: WelcomeScreenLogic.State(), reducer: {
                 WelcomeScreenLogic()
             }))
         }
