@@ -20,6 +20,7 @@
 		7910BE462B79688D00B09DFE /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7910BE452B79688D00B09DFE /* HomeScreenView.swift */; };
 		7910BE492B796DA100B09DFE /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7910BE482B796DA100B09DFE /* OnboardingModel.swift */; };
 		7910BE4B2B7A975E00B09DFE /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7910BE4A2B7A975E00B09DFE /* DataManager.swift */; };
+		7910BE4F2B7B72F900B09DFE /* OnboardingCompleteLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7910BE4E2B7B72F900B09DFE /* OnboardingCompleteLogicTests.swift */; };
 		79CC30712B775C10007CC035 /* MultipleFlowExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30702B775C10007CC035 /* MultipleFlowExample.swift */; };
 		79CC30752B775C13007CC035 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79CC30742B775C13007CC035 /* Assets.xcassets */; };
 		79CC30792B775C13007CC035 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79CC30782B775C13007CC035 /* Preview Assets.xcassets */; };
@@ -73,6 +74,7 @@
 		7910BE452B79688D00B09DFE /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		7910BE482B796DA100B09DFE /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
 		7910BE4A2B7A975E00B09DFE /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		7910BE4E2B7B72F900B09DFE /* OnboardingCompleteLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCompleteLogicTests.swift; sourceTree = "<group>"; };
 		79CC306D2B775C10007CC035 /* NavigationStackExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationStackExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79CC30702B775C10007CC035 /* MultipleFlowExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleFlowExample.swift; sourceTree = "<group>"; };
 		79CC30742B775C13007CC035 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			children = (
 				79CC30822B775C13007CC035 /* WelcomeScreenLogicTests.swift */,
 				79CC30A62B7770AC007CC035 /* YearOfBirthLogicTests.swift */,
+				7910BE4E2B7B72F900B09DFE /* OnboardingCompleteLogicTests.swift */,
 				79CC30A82B7772FE007CC035 /* AgeHelperTests.swift */,
 				79CC30AF2B777ACA007CC035 /* FirstNameScreenLogicTests.swift */,
 				7910BE332B793E0E00B09DFE /* NamingFlowLogicTests.swift */,
@@ -432,6 +435,7 @@
 			files = (
 				7910BE342B793E0E00B09DFE /* NamingFlowLogicTests.swift in Sources */,
 				79CC30B02B777ACA007CC035 /* FirstNameScreenLogicTests.swift in Sources */,
+				7910BE4F2B7B72F900B09DFE /* OnboardingCompleteLogicTests.swift in Sources */,
 				79CC30A92B7772FE007CC035 /* AgeHelperTests.swift in Sources */,
 				79CC30A72B7770AC007CC035 /* YearOfBirthLogicTests.swift in Sources */,
 				79CC30832B775C13007CC035 /* WelcomeScreenLogicTests.swift in Sources */,
