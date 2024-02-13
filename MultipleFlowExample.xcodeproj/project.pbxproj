@@ -24,6 +24,7 @@
 		7910BE512B7B742B00B09DFE /* HomeScreenLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7910BE502B7B742B00B09DFE /* HomeScreenLogicTests.swift */; };
 		7910BE562B7B784800B09DFE /* FamilyNameScreenLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7910BE552B7B784800B09DFE /* FamilyNameScreenLogicTests.swift */; };
 		7910BE582B7B79A800B09DFE /* NameCompleteLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7910BE572B7B79A800B09DFE /* NameCompleteLogicTests.swift */; };
+		794820602B7B9EF600A88D91 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7948205F2B7B9EF600A88D91 /* SplashScreen.swift */; };
 		79CC30712B775C10007CC035 /* MultipleFlowExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30702B775C10007CC035 /* MultipleFlowExample.swift */; };
 		79CC30752B775C13007CC035 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79CC30742B775C13007CC035 /* Assets.xcassets */; };
 		79CC30792B775C13007CC035 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79CC30782B775C13007CC035 /* Preview Assets.xcassets */; };
@@ -81,6 +82,7 @@
 		7910BE502B7B742B00B09DFE /* HomeScreenLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenLogicTests.swift; sourceTree = "<group>"; };
 		7910BE552B7B784800B09DFE /* FamilyNameScreenLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyNameScreenLogicTests.swift; sourceTree = "<group>"; };
 		7910BE572B7B79A800B09DFE /* NameCompleteLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCompleteLogicTests.swift; sourceTree = "<group>"; };
+		7948205F2B7B9EF600A88D91 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		79CC306D2B775C10007CC035 /* NavigationStackExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationStackExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79CC30702B775C10007CC035 /* MultipleFlowExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleFlowExample.swift; sourceTree = "<group>"; };
 		79CC30742B775C13007CC035 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 		79CC30B92B7780C7007CC035 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7948205F2B7B9EF600A88D91 /* SplashScreen.swift */,
 				79CC30B72B7780C3007CC035 /* WelcomeScreen.swift */,
 				79CC30BA2B79222D007CC035 /* YearOfBirthScreen.swift */,
 				79CC30BC2B7925B5007CC035 /* OnboardingCompleteScreen.swift */,
@@ -436,6 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				794820602B7B9EF600A88D91 /* SplashScreen.swift in Sources */,
 				79CC30AB2B777313007CC035 /* AgeHelper.swift in Sources */,
 				79CC30B22B777B33007CC035 /* NamingFlowStack.swift in Sources */,
 				79CC30BB2B79222D007CC035 /* YearOfBirthScreen.swift in Sources */,
