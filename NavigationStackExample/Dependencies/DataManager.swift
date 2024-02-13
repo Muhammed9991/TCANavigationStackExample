@@ -9,9 +9,8 @@ extension DependencyValues {
     }
 }
 
-@DependencyClient
 struct DataManager: Sendable {
-    var isDataAvailable: @Sendable (_ from: URL) -> Bool = { _ in false }
+    var isDataAvailable: @Sendable (_ from: URL) -> Bool
     var load: @Sendable (_ from: URL) throws -> Data
     var save: @Sendable (Data, _ to: URL) async throws -> Void
     var delete: @Sendable (_ to: URL) async throws -> Void
@@ -32,7 +31,6 @@ extension DataManager: DependencyKey {
         delete: { url in try FileManager.default.removeItem(at: url) }
     )
     
-    static let testValue = Self()
 }
 
 extension DataManager {
