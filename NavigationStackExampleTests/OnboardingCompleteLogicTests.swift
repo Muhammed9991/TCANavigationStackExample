@@ -1,5 +1,3 @@
-import Foundation
-
 @testable import NavigationStackExample
 import XCTest
 import ComposableArchitecture

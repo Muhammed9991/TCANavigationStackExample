@@ -33,7 +33,6 @@ struct HomeScreenLogic {
         }
     }
     
-    @Dependency(\.dataManager.load) var loadData
     
     enum Action: Equatable, Sendable, BindableAction {
         case binding(BindingAction<State>)
