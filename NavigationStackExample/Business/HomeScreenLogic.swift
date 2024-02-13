@@ -33,7 +33,6 @@ struct HomeScreenLogic {
         }
     }
     
-    @Dependency(\.dataManager.load) var loadData
     
     enum Action: Equatable, Sendable, BindableAction {
         case binding(BindingAction<State>)
@@ -47,7 +46,6 @@ struct HomeScreenLogic {
     }
     
     @Dependency(\.dataManager.delete) var delete
-    @Dependency(\.dataManager.load) var load
     
     var body: some Reducer<State, Action> {
         BindingReducer()
@@ -59,6 +57,8 @@ struct HomeScreenLogic {
                     try await delete(.namingModel)
                     try await delete(.dobModel)
                     await send(.delegate(.logOut))
+                } catch: { error, send in
+                    // TODO: Ideally we should show failed to log out banner and prompt user to try again
                 }
                 
             case .didTapUpdateNameButton:

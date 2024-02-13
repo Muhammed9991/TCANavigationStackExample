@@ -18,9 +18,7 @@ struct NamingFlowLogic {
         }
         
     }
-    
-    @Dependency(\.dataManager) var dataManager
-    
+        
     var body: some Reducer<State, Action> {
         Reduce<State, Action> { state, action in
             switch action {

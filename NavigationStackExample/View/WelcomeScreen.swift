@@ -1,7 +1,7 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct WelcomeView: View {
+struct WelcomeScreen: View {
     @Perception.Bindable var store: StoreOf<WelcomeScreenLogic>
     var body: some View {
         WithPerceptionTracking {
@@ -58,7 +58,7 @@ struct WelcomeView: View {
 }
 
 #Preview {
-    WelcomeView(store: Store(initialState: WelcomeScreenLogic.State(), reducer: {
+    WelcomeScreen(store: Store(initialState: WelcomeScreenLogic.State(), reducer: {
         WelcomeScreenLogic()
     }))
 }

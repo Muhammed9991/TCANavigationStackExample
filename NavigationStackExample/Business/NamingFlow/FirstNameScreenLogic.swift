@@ -21,10 +21,7 @@ struct FirstNameScreenLogic {
             case navigateToFamilyNameScreen(firstName: String)
         }
     }
-    
-    @Dependency(\.dataManager) var dataManager
-    @Dependency(\.dismiss) var dismiss
-    
+        
     var body: some Reducer<State, Action>  {
         BindingReducer()
         Reduce<State, Action> { state, action in

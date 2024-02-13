@@ -33,6 +33,8 @@ struct OnboardingCompleteLogic {
                         try await saveData(JSONEncoder().encode(namingModel), .namingModel)
                         try await saveData(JSONEncoder().encode(dobModel), .dobModel)
                     }
+                } catch: { error, send in
+                    // TODO: handle write error
                 }
             
             case .didTapNextButton:

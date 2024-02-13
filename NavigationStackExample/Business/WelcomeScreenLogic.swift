@@ -98,6 +98,8 @@ struct WelcomeScreenLogic {
                             return .run { send in
                                 try await saveData(JSONEncoder().encode(namingModel), .namingModel)
                                 await send(.navigateToHomeScreen(firstName: firstName, familyName: familyName))
+                            } catch: { error, send in
+                                // TODO: handle error saving
                             }
                         } else {
                             state.path.append(.onboardingCompleteScreen(OnboardingCompleteLogic.State(firstName: firstName, familyName: familyName, dateOfBirth: state.dateOfBirth)))

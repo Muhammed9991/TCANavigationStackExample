@@ -13,8 +13,8 @@ final class YearOfBirthLogicTests: XCTestCase {
             $0.date.now = DateFormatter.date(fromString: "2010-01-01 00:00:00 +0000")!
         }
         
-        await store.send(.didTapNextButton)
-        await store.receive(.navigateToOnBoardingCompleteScreen)
+        await store.send(.didTapNextButton(dateOfBirth: Date(timeIntervalSince1970: 123456789)))
+        await store.receive(.navigateToOnBoardingCompleteScreen(dateOfBirth: Date(timeIntervalSince1970: 123456789)))
     }
     
     func testDidTapNextButton_where_userIsOver18() async {
@@ -25,7 +25,7 @@ final class YearOfBirthLogicTests: XCTestCase {
             $0.date.now = DateFormatter.date(fromString: "1990-01-01 00:00:00 +0000")!
         }
         
-        await store.send(.didTapNextButton)
+        await store.send(.didTapNextButton(dateOfBirth: Date(timeIntervalSince1970: 123456789)))
         await store.receive(.navigateToNamingFlow)
     }
 }
