@@ -14,4 +14,15 @@ final class HomeScreenLogicTests: XCTestCase {
         await store.send(.didTapLogOutButton)
         await store.receive(.delegate(.logOut))
     }
+    
+    func testDidTapLogOutButtonFaileToDelete() async {
+        let store = TestStore(initialState: HomeScreenLogic.State()) {
+            HomeScreenLogic()
+        } withDependencies: {
+            $0.dataManager = .failToDelete
+        }
+        
+        await store.send(.didTapLogOutButton)
+        
+    }
 }

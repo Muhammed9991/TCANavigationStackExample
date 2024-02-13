@@ -213,6 +213,25 @@ final class WelcomeScreenLogicTests: XCTestCase {
         }
     }
     
+    func testNamingFlowFinalNavigationWhenUserLoggedInFailedToSaveData() async {
+        let store = TestStore(initialState: WelcomeScreenLogic.State(
+            path: StackState(
+                [
+                    .namingFlow(NamingFlowLogic.State())
+                ]
+            )
+            , dateOfBirth: Date(timeIntervalSince1970: 12345678)
+        )) {
+            WelcomeScreenLogic()
+        } withDependencies: {
+            $0.dataManager = .failToWrite
+        }
+        
+        await store.send(.path(.element(id: 0, action: .namingFlow(.delegate(.finalNavigation(firstName: "John", familyName: "Doe"))))))
+        
+        // TODO: handle if fail to save data
+    }
+    
     // MARK: Onboarding complete navigation
     
     func testOnboardingCompleteNavigateToHomeScreen() async {

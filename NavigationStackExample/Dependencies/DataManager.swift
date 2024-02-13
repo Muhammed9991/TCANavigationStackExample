@@ -71,4 +71,14 @@ extension DataManager {
         save: { _, _ in }, 
         delete: { _ in  }
     )
+    
+    static let failToDelete = Self(
+        isDataAvailable: { _ in false },
+        load: { _ in Data() },
+        save: { _, _ in },
+        delete: { _ in
+            struct DeleteError: Error {}
+            throw DeleteError()
+        }
+    )
 }
