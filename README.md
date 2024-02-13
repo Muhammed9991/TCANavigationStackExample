@@ -13,8 +13,8 @@ This repostory shows an example of one of the possible ways of creating re-usabl
 ```mermaid
 graph TD;
 A[Splash screen]--> B{Is user signed in?};
-B -- Yes --> C[Home screen];
-B -- No --> D[Welcome screen];
+B -- Yes --> C[Welcome screen];
+B -- No --> D[Home screen];
 C --> E[Year of Birth screen];
 E --> F{Is user above 18?};
 F -- Yes --> G[Naming Flow];
