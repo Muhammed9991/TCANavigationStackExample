@@ -160,6 +160,35 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		7910BE522B7B751D00B09DFE /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				79CC30A82B7772FE007CC035 /* AgeHelperTests.swift */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		7910BE532B7B752A00B09DFE /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				79CC30822B775C13007CC035 /* WelcomeScreenLogicTests.swift */,
+				79CC30A62B7770AC007CC035 /* YearOfBirthLogicTests.swift */,
+				7910BE4E2B7B72F900B09DFE /* OnboardingCompleteLogicTests.swift */,
+				7910BE502B7B742B00B09DFE /* HomeScreenLogicTests.swift */,
+				7910BE542B7B753300B09DFE /* NamingFlow */,
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
+		7910BE542B7B753300B09DFE /* NamingFlow */ = {
+			isa = PBXGroup;
+			children = (
+				7910BE332B793E0E00B09DFE /* NamingFlowLogicTests.swift */,
+				79CC30AF2B777ACA007CC035 /* FirstNameScreenLogicTests.swift */,
+			);
+			path = NamingFlow;
+			sourceTree = "<group>";
+		};
 		79CC30642B775C10007CC035 = {
 			isa = PBXGroup;
 			children = (
@@ -207,13 +236,8 @@
 		79CC30812B775C13007CC035 /* NavigationStackExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				79CC30822B775C13007CC035 /* WelcomeScreenLogicTests.swift */,
-				79CC30A62B7770AC007CC035 /* YearOfBirthLogicTests.swift */,
-				7910BE4E2B7B72F900B09DFE /* OnboardingCompleteLogicTests.swift */,
-				7910BE502B7B742B00B09DFE /* HomeScreenLogicTests.swift */,
-				79CC30A82B7772FE007CC035 /* AgeHelperTests.swift */,
-				79CC30AF2B777ACA007CC035 /* FirstNameScreenLogicTests.swift */,
-				7910BE332B793E0E00B09DFE /* NamingFlowLogicTests.swift */,
+				7910BE532B7B752A00B09DFE /* Business */,
+				7910BE522B7B751D00B09DFE /* Dependencies */,
 			);
 			path = NavigationStackExampleTests;
 			sourceTree = "<group>";
