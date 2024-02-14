@@ -14,43 +14,37 @@ struct WelcomeScreen: View {
                 }
                 .onAppear { self.store.send(.onAppear) }
             } destination: { store in
-                switch store.state {
-                case .yearOfBirthScreen:
-                    if let store = store.scope(state: \.yearOfBirthScreen, action: \.yearOfBirthScreen) {
+                switch store.case {
+                case let .yearOfBirthScreen(store):
                         YearOfBirthScreen(store: store)
-                    }
-                case .onboardingCompleteScreen:
-                    if let store = store.scope(state: \.onboardingCompleteScreen, action: \.onboardingCompleteScreen) {
+                case let .onboardingCompleteScreen(store):
                         OnboardingCompleteScreen(store: store)
-                    }
                     
-                case .homeScreen:
-                    if let store = store.scope(state: \.homeScreen, action: \.homeScreen) {
+                case let .homeScreen(store):
                         HomeScreenView(store: store)
-                    }
-                case .namingFlow:
-                    if let store = store.scope(state: \.namingFlow, action: \.namingFlow) {
-                        
-                        WithPerceptionTracking {
-                            if let childStore = store.scope(state: \.namingFlowStack, action: \.namingFlowStack) {
-                                switch childStore.state {
-                                case .firstNameScreen:
-                                    if let store = childStore.scope(state: \.firstNameScreen, action: \.firstNameScreen) {
-                                        FirstNameScreen(store: store)
-                                    }
-                                case .familyNameScreen:
-                                    if let store = childStore.scope(state: \.familyNameScreen, action: \.familyNameScreen) {
-                                        FamilyNameScreen(store: store)
-                                    }
-                                    
-                                case .nameCompleteScreen:
-                                    if let store = childStore.scope(state: \.nameCompleteScreen, action: \.nameCompleteScreen) {
-                                        NameCompleteScreen(store: store)
-                                    }
+                    
+                case let .namingFlow(store):
+                    
+                    WithPerceptionTracking {
+                        if let childStore = store.scope(state: \.namingFlowStack, action: \.namingFlowStack) {
+                            switch childStore.state {
+                            case .firstNameScreen:
+                                if let store = childStore.scope(state: \.firstNameScreen, action: \.firstNameScreen) {
+                                    FirstNameScreen(store: store)
+                                }
+                            case .familyNameScreen:
+                                if let store = childStore.scope(state: \.familyNameScreen, action: \.familyNameScreen) {
+                                    FamilyNameScreen(store: store)
+                                }
+                                
+                            case .nameCompleteScreen:
+                                if let store = childStore.scope(state: \.nameCompleteScreen, action: \.nameCompleteScreen) {
+                                    NameCompleteScreen(store: store)
                                 }
                             }
                         }
                     }
+                    
                 }
             }
         }

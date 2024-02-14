@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09EC5BD92B7CC465009B8185 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 09EC5BD82B7CC465009B8185 /* ComposableArchitecture */; };
 		7910BE2F2B79387B00B09DFE /* NamingFlowLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7910BE2E2B79387B00B09DFE /* NamingFlowLogic.swift */; };
 		7910BE312B793C5100B09DFE /* NameCompleteLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7910BE302B793C5100B09DFE /* NameCompleteLogic.swift */; };
 		7910BE342B793E0E00B09DFE /* NamingFlowLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7910BE332B793E0E00B09DFE /* NamingFlowLogicTests.swift */; };
@@ -31,7 +32,6 @@
 		79CC30832B775C13007CC035 /* WelcomeScreenLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30822B775C13007CC035 /* WelcomeScreenLogicTests.swift */; };
 		79CC308D2B775C13007CC035 /* NavigationStackExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC308C2B775C13007CC035 /* NavigationStackExampleUITests.swift */; };
 		79CC308F2B775C13007CC035 /* NavigationStackExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC308E2B775C13007CC035 /* NavigationStackExampleUITestsLaunchTests.swift */; };
-		79CC309D2B776726007CC035 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 79CC309C2B776726007CC035 /* ComposableArchitecture */; };
 		79CC30A22B776859007CC035 /* WelcomeScreenLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30A12B776859007CC035 /* WelcomeScreenLogic.swift */; };
 		79CC30A52B776986007CC035 /* YearOfBirthLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30A42B776986007CC035 /* YearOfBirthLogic.swift */; };
 		79CC30A72B7770AC007CC035 /* YearOfBirthLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC30A62B7770AC007CC035 /* YearOfBirthLogicTests.swift */; };
@@ -113,7 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79CC309D2B776726007CC035 /* ComposableArchitecture in Frameworks */,
+				09EC5BD92B7CC465009B8185 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +318,7 @@
 			);
 			name = NavigationStackExample;
 			packageProductDependencies = (
-				79CC309C2B776726007CC035 /* ComposableArchitecture */,
+				09EC5BD82B7CC465009B8185 /* ComposableArchitecture */,
 			);
 			productName = NavigationStackExample;
 			productReference = 79CC306D2B775C10007CC035 /* NavigationStackExample.app */;
@@ -395,7 +395,7 @@
 			);
 			mainGroup = 79CC30642B775C10007CC035;
 			packageReferences = (
-				79CC309B2B776726007CC035 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				09EC5BD72B7CC465009B8185 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = 79CC306E2B775C10007CC035 /* Products */;
 			projectDirPath = "";
@@ -839,20 +839,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		79CC309B2B776726007CC035 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+		09EC5BD72B7CC465009B8185 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.7.3;
+				minimumVersion = 1.8.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		79CC309C2B776726007CC035 /* ComposableArchitecture */ = {
+		09EC5BD82B7CC465009B8185 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 79CC309B2B776726007CC035 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			package = 09EC5BD72B7CC465009B8185 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
 		};
 /* End XCSwiftPackageProductDependency section */
